@@ -1,0 +1,45 @@
+@import "../../App.css";
+
+
+.navigation {
+ background-color: var(--cinzaescuro);
+ height: 15vh;
+ justify-content: space-between;
+ width: 100vw;
+ margin: 0 0 1rem;
+}
+
+  
+
+
+.pesquisa{
+ border-radius: 5px;
+ width: 300px;
+ height: 30px;
+ margin-top: 70px;
+ margin-left: 350px;
+ border: none;
+ cursor: pointer;
+}
+
+.Link{
+    color: rgb(145, 144, 144);
+    padding-right: 60px;
+    display: flex;
+    float: inline-start;
+}
+
+.Link:hover {
+ color: white;
+ 
+
+}
+
+.divlinks{
+    margin-top: -50px;
+    display: flex;
+    height:100px;
+    flex-flow: column wrap;
+    align-content: flex-end;
+
+}
