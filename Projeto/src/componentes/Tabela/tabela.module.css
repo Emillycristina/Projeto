@@ -1,0 +1,8 @@
+@import "../../App.css";
+
+
+.table{
+    background-color: rgb(255, 255, 255, 0.7);
+    width: 50%;
+    height: 40%;
+}

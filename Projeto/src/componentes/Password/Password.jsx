@@ -3,14 +3,7 @@ import { useState, useEffect } from "react";
 import Button from "../Button/Button";
 
 export default function Password (){
-    //const [usuarios, setUsuarios] = useState([])
-    const [email, setEmail] = useState('')
-    //const [sucess, setSucess] = useState('')
-    const [password, setPassword] = useState('')
-    //const [display, setDisplay] = useState(false)
-    const [confirmPassword, setConfirmPassword] = useState('')
-  //  const [userObj, setUserObj] = useState([])
-
+   
     return (
         <div>
           <form>

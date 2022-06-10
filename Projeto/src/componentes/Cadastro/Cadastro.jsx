@@ -1,37 +1,47 @@
-import Cadastro from "./Cadastro.module.css";
+import style from "./Cadastro.modules.css";
 import React from "react";
 import Button from "../Button/Button";
+import { FaUserCircle } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
-export default function Cadastro () {
-      
-    return (
-          <div>
+export default function Cadastro() {
 
-          <form>
-          <label>CADASTRO</label>
-          
-          <label>Nome Completo:</label>
-          <input className={style.input} type="text" placeholder="Digite seu nome" />
-          
-          <label>CPF</label>
-          <input className={style.input} type="text" id="Cpf" placeholder="Digite seu Cpf" />
-
-          <label>E-mail:</label>
-          <input className={style.input} type="text" id="Email" placeholder="Digite seu e-mail" />
+   return(
          
-          <label>Senha:</label>
-          <input className={style.input} type="password" id="Senha" placeholder="Digite sua senha" />
+      <div>
           
-          <label>Confirme sua senha:</label>
-          <input className={style.input} type="password" id="confirmSenha" placeholder="Confirme sua senha" />
+       <form>
+          <Link to="/login"><h4>Login |</h4></Link><br></br>
+          <FaUserCircle size="80px" color="grey"  />
           
-          <label>Matrícula:</label>
-          <input className={style.input} type="text" id="matricula" placeholder="Digite sua matrícula" />
-          </form>
-        
-          <Button texto="Criar" type="text" />
+          <label><h3>CADASTRO</h3></label><br></br>
 
-        </div>
-  )
+          <label> Nome:</label><br></br>
+          <input type="text"  id="nome"  placeholder="Digite seu nome"/><br></br><br></br>
+
+          <label> CPF:</label><br></br>
+          <input type="text"  id="cpf"  placeholder="Digite seu cpf"/><br></br><br></br>
+
+          <label> E-mail:</label><br></br>
+          <input type="text"  id="email"  placeholder="Digite seu e-mail"/><br></br><br></br>
+         
+          <label> Senha:</label><br></br>
+          <input type="text"  id="senha"  placeholder="Digite sua senha"/><br></br><br></br>
+          
+          <label> Confirme sua Senha:</label><br></br>
+          <input type="text"  id="confirmSenha"  placeholder="Confirme sua senha"/><br></br><br></br>
+          
+          <label> Matrícula:</label><br></br>
+          <input type="text" id="matricula"  placeholder="Digite sua matricula"/><br></br><br></br>
+           
+
+        <Button texto="Criar" id="button"/>
+       </form>
+
+      </div>
+
+
+
+   )
 
 }

@@ -55,16 +55,16 @@ export default function Form() {
        <form className={style.Form}>
            <FaUserCircle className={style.userIcon}/>
            <h2>LOGIN</h2><br></br>
-           <label><h4>E-mail:</h4></label>
-            <input
+           <label><p>E-mail:</p></label>
+           <input
             className={style.input}
             type="email"
             placeholder="usuario@email.com"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            /><br></br><br></br>
+            /><br></br>
       
-            <label><h4>Senha:</h4></label>
+            <label><p>Senha:</p></label>
             <div className={style.divEye}>
             <input
              className={style.input}
