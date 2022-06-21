@@ -1,20 +1,24 @@
 import style from "./navBar.module.css"
 import { Link } from "react-router-dom";
-import Button from "../Button/Button";
-
+import { BsSearch  } from "react-icons/bs";
+import {FaUserCircle } from "react-icons/fa";
+import { AiFillHome  } from "react-icons/ai";
 
 export default function Navigation() {
     return (
-      <nav className={style.navigation}>
-        <div className={style.brand}>
-        <input type="text" className={style.pesquisa} placeholder=" Digite o CPF que deseja encontrar..."> 
+  
+    <nav className={style.navigation}>
+    <div className={style.container}>
+      <div className={style.left}>
+        <input type="text" className={style.pesquisar} placeholder=" Digite o CPF que deseja encontrar..."> 
         </input>
-         
-         <Button texto="Pesquisar" type="submit" className="button"/>
-         </div>
-         <div className={style.divlinks}>
-         <Link to="/Home" className={style.Link}> Home |</Link><br></br>
-         <Link to="/Login" className={style.Link}>Login |</Link>
+        <button type="submit" className={style.botao}><BsSearch className={style.lupa}/></button>
+       </div>
+     <div className={style.right}></div>
+    </div>
+        <div className={style.divlinks}>
+        <Link to="/Home" style={{textDecoration:"none"}} className={style.Link}> Home <AiFillHome className={style.home}/> </Link><br></br>
+        <Link to="/Login"  style={{textDecoration:"none"}} className={style.Link}>Login <FaUserCircle className={style.user}/></Link>
         </div>
 
        

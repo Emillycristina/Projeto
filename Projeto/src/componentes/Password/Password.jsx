@@ -1,9 +1,11 @@
 import style from './Password.modules.css'
-import { useState, useEffect } from "react";
+//import { useState, useEffect } from "react";
 import Button from "../Button/Button";
 
-export default function Password (){
+export default function Password() {
    
+    
+    
     return (
         <div>
           <form>
@@ -13,25 +15,19 @@ export default function Password (){
                     <label> E-mail </label>
                     <input placeholder="usuario@email.com" type="text" name="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} />
 
-                  {/*  <div className={display ? style.showInput : style.hideInput}> */}
+              
                     <div>
                     <label> Nova senha </label>
                     <input type="password" name="pass" id="pass"  value={password} onChange={(e) => setPassword(e.target.value)} />
 
                     <label> Confirmar senha </label>
                     <input type="password" name="confirm" id="confirm" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
-                    <Button onClick={function(e){
-                        e.preventDefault()
-                        trocaSenha()
-                    }}texto='Confirmar'/>
+                    <Button 
+                    texto='Confirmar'/>
                     </div>
                 </div>
                <p className={style.sucess}>{sucess}</p>
-                <Button display={display?'none':'flex'} 
-                onClick={function (e) {
-                    e.preventDefault()
-                    verificaEmail()
-                }}
+                <Button display={display ?'none':'flex'} 
                 texto='Verificar e-mail'/>
             </form>
         </div>

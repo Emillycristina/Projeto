@@ -2,7 +2,43 @@
 
 
 .table{
-    background-color: rgb(255, 255, 255, 0.7);
-    width: 50%;
-    height: 40%;
+    background-color:rgb(155, 154, 154);
+    border: none;
+    
 }
+
+.left {
+    -ms-grid-row: 1;
+    grid-row: 1/1;
+    -ms-grid-column: 1;
+    grid-column: 1/1;
+   
+  }
+  
+.right {
+    -ms-grid-row: 1;
+    grid-row: 1/1;
+    -ms-grid-column: 3;
+    grid-column: 3/3;
+    
+  }
+
+.center {
+    -ms-grid-row: 1;
+    grid-row: 1/1;
+    -ms-grid-column: 2;
+    grid-column: 2/2;
+    overflow: hidden;
+  }
+
+  .container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 2fr 1fr;
+    grid-template-columns: 1fr 2fr 1fr;
+    -ms-grid-rows: 100vh;
+    grid-template-rows: calc(100vh - 2rem);
+    width: 100%;
+  }
+  
+  

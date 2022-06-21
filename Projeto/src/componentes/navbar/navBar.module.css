@@ -3,30 +3,31 @@
 
 .navigation {
  background-color: var(--cinzaescuro);
- height: 15vh;
+ height: 20vh;
  justify-content: space-between;
  width: 100vw;
  margin: 0 0 1rem;
 }
 
   
-
-
-.pesquisa{
+.pesquisar{
  border-radius: 5px;
  width: 300px;
  height: 30px;
  margin-top: 70px;
- margin-left: 350px;
+ margin-left: 570px;
  border: none;
  cursor: pointer;
+ background-color: rgb(233, 235, 236);
 }
 
 .Link{
-    color: rgb(145, 144, 144);
-    padding-right: 60px;
-    display: flex;
-    float: inline-start;
+color: rgb(145, 144, 144);
+padding-right: 60px;
+display: flex;
+float: inline-start;
+margin-bottom: 5px;
+
 }
 
 .Link:hover {
@@ -36,10 +37,48 @@
 }
 
 .divlinks{
-    margin-top: -50px;
-    display: flex;
-    height:100px;
-    flex-flow: column wrap;
-    align-content: flex-end;
+ margin-top: -50px;
+ display: flex;
+ height:100px;
+ flex-flow: column wrap;
+align-content: flex-end;
 
+}
+
+.botao{
+    width: 40px;
+    height: 40px;
+  
+}
+
+.lupa{
+    width: 20px;
+    height: 20px;
+}
+
+.left {
+    -ms-grid-row: 1;
+    grid-row: 1/1;
+    -ms-grid-column: 1;
+    grid-column: 1/1;
+   
+  }
+  
+.right {
+    -ms-grid-row: 1;
+    grid-row: 1/1;
+    -ms-grid-column: 3;
+    grid-column: 3/3;
+    
+  }
+ 
+  .user{
+      width: 26px;
+      margin-top: 3px;
+      margin-left: 2px;
+  }
+
+  .home{
+    width: 26px;
+    margin-top: 3px;
 }

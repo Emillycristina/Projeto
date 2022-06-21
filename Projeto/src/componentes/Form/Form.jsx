@@ -12,9 +12,7 @@ export default function Form() {
         const [email, setEmail] = useState("")
         const [password, setPassword] = useState("")
         const [show, setShow] = useState(false)
-        //const [usuario, setUsuario] = useState([])
-        //const {logged, setLogged} = useLogin()
-        //const [sucesso, setSucesso] = useState('')
+        
          
       
         const handleClick = (e) => {
@@ -22,31 +20,7 @@ export default function Form() {
           setShow(!show);
         };
       
-       /*  useEffect(() => {
-      
-          fetch(import.meta.env.VITE_POST_CLIENT)
-          .then((res) => res.json())
-          .then((res) => setUsuario([...res.clientes]) )
-        }, [])
-      
-       console.log(usuario)
-        function fazerLogin() {
-          const loginRealizado = usuario.filter(user => user.email_cliente === email && user.senha === password)
-            if (loginRealizado.length > 0) {
-              setLogged(true);
-              setSucesso("Login realizado com sucesso!");
-              setTimeout(() => {
-                loginRealizado.pop()
-                setSucesso("");
-              }, 3000);
-            } else {
-              setLogged(false);
-              setSucesso("E-mail e senha não coincidem");
-              setTimeout(() => {
-                setSucesso("");
-              }, 3000);
-            }
-          }; */
+        
       
  return (
     <div>
@@ -90,12 +64,10 @@ export default function Form() {
              </div>
             </div>
       
-     {/*  <p id={style.sucesso}>{sucesso}</p> */}
+     
       
-      <Button texto="Entrar" type="submit"  onClick={function (e) {e.preventDefault();
-       fazerLogin();
-       }}
-      /><br></br><br></br>
+      <Button texto="Entrar" type="submit"  /><br></br><br></br>
+      
       <div className={style.containerLink}>
         <Link style={{ textDecoration: "none", color:"white"}} to="/password">
         Esqueceu a senha?

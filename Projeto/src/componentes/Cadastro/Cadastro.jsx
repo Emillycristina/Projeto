@@ -3,9 +3,19 @@ import React from "react";
 import Button from "../Button/Button";
 import { FaUserCircle } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { BsFillEyeFill, BsFillEyeSlashFill} from "react-icons/bs";
 
 export default function Cadastro() {
+   const [email, setEmail] = useState("")
+   const [password, setPassword] = useState("")
+   const [show, setShow] = useState(false)
 
+   const handleClick = (e) =>{
+      e.preventDefault();
+      setShow(!show);
+   };
+
+   
    return(
          
       <div>
@@ -26,16 +36,23 @@ export default function Cadastro() {
           <input type="text"  id="email"  placeholder="Digite seu e-mail"/><br></br><br></br>
          
           <label> Senha:</label><br></br>
-          <input type="text"  id="senha"  placeholder="Digite sua senha"/><br></br><br></br>
-          
+          <input   id="senha"  placeholder="Digite sua senha"
+          type={show ? "text" : "password"} value={password} onChange={(e) => setPassword(e.target.value)}/><br></br><br></br>
+          <div className={style.loginEye}>
+          {show ? (<BsFillEyeFill size="20px" className={style.Openeye} onClick={handleClick}/> 
+          ) : ( <BsFillEyeSlashFill  size="20px" className={style.Openeye} onClick={handleClick} 
+          /> )}
+          </div>
+
           <label> Confirme sua Senha:</label><br></br>
           <input type="text"  id="confirmSenha"  placeholder="Confirme sua senha"/><br></br><br></br>
+
           
           <label> Matrícula:</label><br></br>
           <input type="text" id="matricula"  placeholder="Digite sua matricula"/><br></br><br></br>
            
 
-        <Button texto="Criar" id="button"/>
+         <Button texto="Criar" id="button"/>
        </form>
 
       </div>

@@ -1,43 +1,47 @@
-import style from "./Tabela.module.css";
+import style from "./tabela.module.css";
 import React from "react";
-
+import DataGrid from "react-data-grid";
+;
 
 export default function Tabela() {
   
-  const Table = ({dataKeys, data}) => (
-    <table className={style.tabela}>
-    <thead className={style.thead}>
-      <tr>
-        {
-          dataKeys.map(keys => {
+  const columns = [
+    { key: 'id', name: 'ID' },
+    { key: 'name', name: 'Name' },
+    { key: 'cpf', name: 'CPF' },
+    { key: 'situação', name: 'Situação'},
+    
    
-   
-                  return(
-                    <th key={keys}>{keys}</th>
-                  )
-                })
-              }
-      
-            </tr>
-          </thead>
-          <tbody>
-            {
-              data.map(data => {
-                return(
-                  <tr data={data.id}>
-      
-                    <th >{data.id}</th>
-                    <th>{data.Nome}</th>
-                    <th >{data.Cpf}</th>
-                    <th>{data.Situação}</th>
-                    <th >{data.cargo}</th>
-                  </tr>
-                )
-              })
-            }
-      
-      
-          </tbody>
-        </table>
-      )
-          }
+
+  
+  ];
+  
+  const rows = [
+    { id: 1, title: 'Name' },
+    
+  ];
+  
+  const rowClassRules = {
+    'rag-green': 'data.situação === Ativo',
+    'rag-red': 'data.situação === Inativo',
+    
+};
+  
+ 
+return (
+
+ <div className={style.container}>
+   <div className={style.left}></div>
+     <div className={style.center}>
+      <div>
+       <DataGrid theme="default-dark" rowClassRules={rowClassRules} columns={columns} rows={rows} style={{width:800, height: 200, }} className={style.table}/>
+ 
+    </div>
+   </div>
+   <div className={style.rigth}></div>
+  </div>
+
+    )
+
+
+}
