@@ -1,19 +1,21 @@
 import style from "./Cadastro.modules.css";
 import React from "react";
 import Button from "../Button/Button";
+import { useState } from "react";
 import { FaUserCircle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { BsFillEyeFill, BsFillEyeSlashFill} from "react-icons/bs";
 
+
 export default function Cadastro() {
-   const [email, setEmail] = useState("")
+   {
    const [password, setPassword] = useState("")
    const [show, setShow] = useState(false)
 
-   const handleClick = (e) =>{
+   const handleClick = (e) => {
       e.preventDefault();
-      setShow(!show);
-   };
+      setShow(!show); 
+  };
 
    
    return(
@@ -21,9 +23,11 @@ export default function Cadastro() {
       <div>
           
        <form>
-          <Link to="/login"><h4>Login |</h4></Link><br></br>
+          <Link to="/login"><h4>Login<FaUserCircle size="19px"/></h4></Link><br></br>
+          <hr></hr><br></br>
           <FaUserCircle size="80px" color="grey"  />
-          
+        
+
           <label><h3>CADASTRO</h3></label><br></br>
 
           <label> Nome:</label><br></br>
@@ -36,29 +40,59 @@ export default function Cadastro() {
           <input type="text"  id="email"  placeholder="Digite seu e-mail"/><br></br><br></br>
          
           <label> Senha:</label><br></br>
-          <input   id="senha"  placeholder="Digite sua senha"
-          type={show ? "text" : "password"} value={password} onChange={(e) => setPassword(e.target.value)}/><br></br><br></br>
-          <div className={style.loginEye}>
-          {show ? (<BsFillEyeFill size="20px" className={style.Openeye} onClick={handleClick}/> 
-          ) : ( <BsFillEyeSlashFill  size="20px" className={style.Openeye} onClick={handleClick} 
-          /> )}
-          </div>
+          <input   
+          placeholder="Digite sua senha"
+          type={show ? "text" : "password"} 
+          value={password} 
+          onChange={(e) => setPassword(e.target.value)}/><br></br>
+          <div>
+          {show ? (
+          <BsFillEyeFill 
+          size="20px"
+          className="Eye"
+          onClick={handleClick}
+          /> 
+          ) : ( 
+          <BsFillEyeSlashFill  
+          size="20px" 
+          className="Eye"
+          onClick={handleClick} 
+         /> 
+          )}
+          </div><br />
 
           <label> Confirme sua Senha:</label><br></br>
-          <input type="text"  id="confirmSenha"  placeholder="Confirme sua senha"/><br></br><br></br>
-
+          <input  id="confirmSenha"
+           type={show ? "text" : "password"} 
+          value={password} 
+          onChange={(e) => setPassword(e.target.value)}/><br></br>
+          <div>
+          {show ? (
+          <BsFillEyeFill 
+          size="20px"
+          className="Eye"
+          onClick={handleClick}
+          /> 
+          ) : ( 
+          <BsFillEyeSlashFill  
+          size="20px" 
+          className="Eye"
+          onClick={handleClick} 
+         /> 
+          )} <br></br>
+          </div>
           
           <label> Matrícula:</label><br></br>
-          <input type="text" id="matricula"  placeholder="Digite sua matricula"/><br></br><br></br>
+          <input type="text" id="matricula"  class="inputM" placeholder="Digite sua matricula"/><br></br><br></br>
            
 
-         <Button texto="Criar" id="button"/>
+         <Button texto="Criar" id="button" type="submit"/>
        </form>
 
       </div>
 
 
 
-   )
-
-}
+   );
+  }
+} 

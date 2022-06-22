@@ -7,6 +7,7 @@ import Form from "./componentes/Form/Form";
 import Password from "./componentes/Password/Password";
 import Cadastro from "./componentes/Cadastro/Cadastro";
 import Pagina404 from "./componentes/Pagina404/Pagina404";
+import EnvEmail from "./componentes/EnvEmail/EnvEmail";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -27,6 +28,7 @@ function App() {
         <Route path='/'   element={<Main />}/>
         <Route path='/login' element={<Form />} />
         <Route path='/password' element={<Password />} />
+        <Route path='/envEmail' element={<EnvEmail />} />
         <Route path='/cadastro' element={<Cadastro />} /> 
         <Route path='/pagina404' element={<Pagina404/>} />  
        </Routes>

@@ -1,36 +1,38 @@
-import style from './Password.modules.css'
+import style from './password.modules.css'
 //import { useState, useEffect } from "react";
 import Button from "../Button/Button";
+import { useState } from 'react';
+
 
 export default function Password() {
    
     
+    const [password, setPassword] = useState("")
+    const [confirmPassword, setConfirmPassword] = useState("")
     
     return (
         <div>
-          <form>
-                <h1>Esqueceu a senha?</h1>
+          <form className="formulario">
+                <h2>Recuperar Senha</h2><br></br>
 
                  <div className={style.inputDiv}>
-                    <label> E-mail </label>
-                    <input placeholder="usuario@email.com" type="text" name="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+                    
+                    <label> Nova senha </label><br></br>
+                    <input type="password"
+                    name="pass" id="pass"  
+                    value={password} onChange={(e) => setPassword(e.target.value)} />
+                    <br></br><br></br>
 
-              
-                    <div>
-                    <label> Nova senha </label>
-                    <input type="password" name="pass" id="pass"  value={password} onChange={(e) => setPassword(e.target.value)} />
-
-                    <label> Confirmar senha </label>
-                    <input type="password" name="confirm" id="confirm" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
+                    <label> Confirmar senha </label><br></br>
+                    <input type="password" 
+                    name="confirm" id="confirm" 
+                    value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
+                    <br></br>
                     <Button 
                     texto='Confirmar'/>
                     </div>
-                </div>
-               <p className={style.sucess}>{sucess}</p>
-                <Button display={display ?'none':'flex'} 
-                texto='Verificar e-mail'/>
-            </form>
-        </div>
+                </form>
+           </div>
     )
 }
 

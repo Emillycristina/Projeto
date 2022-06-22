@@ -1,19 +1,16 @@
 import style from "./tabela.module.css";
 import React from "react";
 import DataGrid from "react-data-grid";
-;
+
 
 export default function Tabela() {
   
   const columns = [
     { key: 'id', name: 'ID' },
-    { key: 'name', name: 'Name' },
+    { key: 'name', name: 'NOME' },
     { key: 'cpf', name: 'CPF' },
-    { key: 'situação', name: 'Situação'},
+    { key: 'situação', name: 'SITUAÇÃO'}
     
-   
-
-  
   ];
   
   const rows = [
@@ -34,7 +31,10 @@ return (
    <div className={style.left}></div>
      <div className={style.center}>
       <div>
-       <DataGrid theme="default-dark" rowClassRules={rowClassRules} columns={columns} rows={rows} style={{width:800, height: 200, }} className={style.table}/>
+       <DataGrid rowClassRules={rowClassRules} 
+       columns={columns} rows={rows} 
+       style={{width:800, height: 200}} 
+       className={style.table}/>
  
     </div>
    </div>

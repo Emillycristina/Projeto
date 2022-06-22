@@ -1,14 +1,21 @@
 @import "../../App.css";
 
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+
 input{
 border: none;
-background-color: rgb(255, 255, 255, 0.4); 
+background-color: rgba(255, 255, 255, 0.884); 
 cursor: pointer;
 border-radius: 5px;
- width: 200px;
- height: 30px;
+width: 200px;
+height: 30px;
    
-   }
+}
 
 form{
  background-color: rgb(24, 24, 24) ;
@@ -37,4 +44,17 @@ color: white;
 display: flex;
 margin-left: 200px;
     
+}
+
+.Eye {
+  margin-top: -25px;
+  margin-left: 52%;
+  float: inline-end;
+  display: flex;
+  color: #181818;
+  cursor: pointer;
+}
+
+.inputM{
+  width: 70px;
 }

@@ -9,15 +9,15 @@ import {FaUserCircle } from "react-icons/fa";
 export default function Form() {
     {
 
-        const [email, setEmail] = useState("")
-        const [password, setPassword] = useState("")
-        const [show, setShow] = useState(false)
+      const [email, setEmail] = useState("")
+      const [password, setPassword] = useState("")
+      const [show, setShow] = useState(false)
         
          
       
-        const handleClick = (e) => {
-          e.preventDefault();
-          setShow(!show);
+      const handleClick = (e) => {
+         e.preventDefault();
+         setShow(!show);
         };
       
         
@@ -59,7 +59,7 @@ export default function Form() {
                size="20px"
                className={style.Openeye}
                onClick={handleClick}
-                        />
+                />
               )}
              </div>
             </div>
@@ -69,7 +69,7 @@ export default function Form() {
       <Button texto="Entrar" type="submit"  /><br></br><br></br>
       
       <div className={style.containerLink}>
-        <Link style={{ textDecoration: "none", color:"white"}} to="/password">
+        <Link style={{ textDecoration: "none", color:"white"}} to="/EnvEmail">
         Esqueceu a senha?
         </Link>
         </div>
