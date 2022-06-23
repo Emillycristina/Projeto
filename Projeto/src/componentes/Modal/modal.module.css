@@ -1,0 +1,13 @@
+@import "../../App.css";
+
+.modal{
+    background-color: white;
+    width: 200px;
+    height: 200px;
+    position: fixed;
+    left: 200px;
+    top:40px;
+    display: none;
+    border-radius: 2px;
+    color: black;
+}

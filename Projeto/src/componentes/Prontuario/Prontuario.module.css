@@ -1,0 +1,16 @@
+@import "../../App.css";
+
+.folder {
+ cursor: pointer;
+ margin-top: 300px;
+ margin-left: 10px;
+}
+
+.FcFolder{
+    margin-left: 500px;
+   
+}
+
+.show{
+    display: block !important;
+}

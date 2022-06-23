@@ -5,6 +5,8 @@ import DataGrid from "react-data-grid";
 
 export default function Tabela() {
   
+  
+  
   const columns = [
     { key: 'id', name: 'ID' },
     { key: 'name', name: 'NOME' },
