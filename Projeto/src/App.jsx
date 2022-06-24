@@ -9,10 +9,12 @@ import Cadastro from "./componentes/Cadastro/Cadastro";
 import Pagina404 from "./componentes/Pagina404/Pagina404";
 import EnvEmail from "./componentes/EnvEmail/EnvEmail";
 import Prontuario from "./componentes/Prontuario/Prontuario";
+import Modal from "./componentes/Modal/Modal";
+
 
 
 function App() {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState("");
   useEffect(() =>{
    setTimeout(() =>{
      setIsLoading(false);
@@ -35,6 +37,8 @@ function App() {
         <Route path='/cadastro' element={<Cadastro />} /> 
         <Route path='/pagina404' element={<Pagina404/>} /> 
         <Route path= '/prontuario' element={<Prontuario/>}/>
+        <Route path= '/modal' element={<Modal/>}/>
+        
        
        </Routes>
      </BrowserRouter>

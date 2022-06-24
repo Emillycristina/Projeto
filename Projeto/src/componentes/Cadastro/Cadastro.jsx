@@ -23,7 +23,7 @@ export default function Cadastro() {
       <div>
           
        <form>
-          <Link to="/login"><h4>Login<FaUserCircle size="19px"/></h4></Link><br></br>
+          <Link to="/login" style={{textDecoration:"none"}}><h4>Login<FaUserCircle size="19px"/></h4></Link><br></br>
           <hr></hr><br></br>
           <FaUserCircle size="80px" color="grey"  />
         
