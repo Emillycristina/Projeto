@@ -29,7 +29,7 @@ const Modal = ({setIsOpen}) => {
             <div className={style.actionsContainer}>
             
             <button type="submit" className={style.upBtn} onClick={() => setIsOpen(true)}>
-            <AiOutlineUpload size="18px" /><input type="file" className={style.arquivo} />
+            <AiOutlineUpload size="18px" /><input type="file" className={style.file} />
             </button>
             <button  className={style.downBtn} onClick={() => setIsOpen(false)}>
              Download <AiOutlineDownload size="18px" />
