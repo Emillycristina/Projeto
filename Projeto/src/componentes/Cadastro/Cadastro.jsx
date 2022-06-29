@@ -83,7 +83,7 @@ export default function Cadastro() {
           </div>
           
           <label> Matrícula:</label><br></br>
-          <input type="text" id="matricula"  class="inputM" placeholder="Digite sua matricula"/><br></br><br></br>
+          <input type="text" id="matricula"  className="inputM" placeholder="Digite sua matricula"/><br></br><br></br>
            
 
          <Button texto="Criar" id="button" type="submit"/>

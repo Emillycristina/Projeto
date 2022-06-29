@@ -3,7 +3,7 @@
 
 .navigation {
  background-color: var(--cinzaescuro);
- height: 20vh;
+ height: 23vh;
  justify-content: space-between;
  width: 100vw;
  margin: 0 0 1rem;
@@ -81,4 +81,155 @@ align-content: flex-end;
   .home{
     width: 26px;
     margin-top: 3px;
+}
+
+
+
+@media  (max-width: 600px){
+    
+    .Link{
+      margin-top: -20px;
+      margin-right: -13px;
+
+
+    }
+
+    .botao {
+      margin-left: 9px;
+      height: 35px;
+
+      
+    }
+
+
+    .pesquisar{
+        margin-left: 20px;
+        width: 250px ;
+        margin-top: 130px;
+
+    }
+}
+
+@media  (min-width: 600px){
+    
+    .Link{
+      margin-top: -20px;
+      margin-right: -13px;
+
+
+    }
+
+    .botao {
+      margin-left: 9px;
+      height: 35px;
+
+      
+    }
+
+
+    .pesquisar{
+        margin-left: 200px;
+        width: 250px ;
+        margin-top: 130px;
+
+    }
+}
+
+@media  (min-width: 768px){
+    
+.Link{
+   margin-top: -20px;
+   margin-right: -13px;
+
+
+}
+
+.botao {
+  margin-left: 9px;
+  height: 35px;
+
+      
+    }
+
+
+.pesquisar{
+  margin-left: 250px;
+  width: 250px ;
+  margin-top: 130px;
+
+    }
+}
+
+@media  (min-width: 992px){
+    
+.Link{
+  margin-top: -20px;
+  margin-right: -13px;
+    
+    
+}
+    
+.botao {
+ margin-left: 9px;
+ height: 35px;
+    
+          
+}
+    
+    
+.pesquisar{
+  margin-left: 350px;
+  width: 250px ;
+  margin-top: 130px;
+    
+        }
+}
+
+@media  (min-width: 1200px){
+    
+.Link{
+    margin-top: -20px;
+    margin-right: -13px;
+        
+        
+    }
+        
+.botao {
+  margin-left: 9px;
+  height: 35px;
+        
+              
+}
+        
+        
+.pesquisar{
+  margin-left: 450px;
+  width: 250px ;
+  margin-top: 130px;
+        
+ }
+}
+
+@media(min-width: 1600px){
+    
+.Link{
+ margin-top: -20px;
+ margin-right: -13px;
+            
+            
+ }
+            
+.botao {
+ margin-left: 9px;
+ height: 35px;
+            
+                  
+}
+            
+.pesquisar{
+ margin-left: 750px;
+ width: 250px ;
+ margin-top: 130px;
+            
+ }
 }

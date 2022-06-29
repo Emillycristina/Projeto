@@ -1,6 +1,6 @@
 import style from "./modal.module.css";
 import React, {useState} from "react";
-import {AiOutlineClose,AiOutlineUpload, AiOutlineDownload} from "react-icons/ai";
+import {AiOutlineClose,AiOutlineUpload, AiOutlineDownload,AiFillPrinter} from "react-icons/ai";
 
 
 
@@ -27,15 +27,18 @@ const Modal = ({setIsOpen}) => {
           <div className={style.modalActions}>
          
             <div className={style.actionsContainer}>
+
             
-            <button type="submit" className={style.upBtn} onClick={() => setIsOpen(true)}>
-            <AiOutlineUpload size="18px" /><input type="file" className={style.file} />
+            
+            <input type="file" className={style.file} /><button type="submit" className={style.upBtn} onClick={() => setIsOpen(true)}>
+            <AiOutlineUpload size="18px" /></button>
+            <div className={style.botoes}>
+            <button  className={style.downBtn} onClick={() => setIsOpen(true)}>
+            <p className={style.baixar}>Baixar</p> <AiOutlineDownload size="18px" className={style.down} />
             </button>
-            <button  className={style.downBtn} onClick={() => setIsOpen(false)}>
-             Download <AiOutlineDownload size="18px" />
-            </button>
-           
+            <button className={style.print} ><AiFillPrinter size="18px"  /></button>
             </div>
+           </div>
           </div>
          </div>
       </div>

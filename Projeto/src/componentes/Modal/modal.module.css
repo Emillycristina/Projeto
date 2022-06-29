@@ -94,21 +94,257 @@ align-items: center;
   }
 
 .downBtn{
-    width: 120px;
+    height: 39px;
     border-radius:4px ;
-    margin-bottom: 5px;
+    margin-bottom: 18px;
 }
 
 .upBtn{
-    width: 120px;
+    width: 70px;
+    height: 39px;
     border-radius:4px ;
-    margin-bottom: 5px;
+    margin-bottom: 18px;
+    margin-left: -146px;
 }
 
+.print{
+  width: 50px;
+  height: 30px;
+  border-radius: 4px;
+  margin-bottom: 18px;
+
+}
 .file{
     width: 210px;
-    height: 27px;
+    height: 38px;
     border-radius:4px ;
     cursor: pointer;
-    background-color: rgb(168, 167, 167);
+    background-color:rgb(155, 154, 154);
+    color: black;
 }
+
+.file:hover {
+  color: white;
+}
+
+.down{
+ margin-bottom: 2px ;
+ margin-top: 1px ;
+}
+
+.baixar{
+  color: black;
+}
+
+.baixar:hover{
+  color: white;
+}
+
+
+
+@media (max-width: 600px) {
+ .modal{
+  width: 400px;
+  height: 600px ;
+  
+
+ }
+
+ .file{
+   width: 140px;
+   height: 30px;
+   margin-left: -20px;
+   cursor: pointer;
+ }
+
+ .upBtn{
+   width: 40px;
+   height: 30px;
+   margin-left: -40px;
+   margin-right: 50px;
+ }
+
+ .downBtn{
+  width: 40px;
+  height: 30px;
+  margin-left: -25px;
+  margin-right: -40px;
+ }
+
+ .baixar{
+   display: none;
+   
+ }
+ .print{
+  width: 40px;
+  height: 30px;
+  margin-left: -5px;
+ }
+} 
+
+
+
+@media (min-width: 600px) {
+  .modal{
+   width: 400px;
+   height: 600px ;
+   
+ 
+  }
+ 
+  .file{
+    width: 130px;
+    height: 30px;
+    margin-left: -20px;
+  }
+ 
+  .upBtn{
+    width: 40px;
+    height: 30px;
+    margin-left: -40px;
+    margin-right: 50px;
+    
+  }
+ 
+  .downBtn{
+   width: 40px;
+   height: 30px;
+   margin-left: -25px;
+   margin-right: -40px;
+  }
+ 
+  .baixar{
+    display: none;
+  }
+  
+  .print{
+    width: 40px;
+    height: 30px;
+    margin-left: -5px;
+   
+ }
+}
+
+ @media (min-width: 768px) {
+  .modal{
+   width: 650px;
+   height: 650px ;
+  
+  }
+ 
+  .file{
+    width: 180px;
+    height: 30px;
+    margin-left: -50px;
+    margin-right: -80px;
+  }
+ 
+  .upBtn{
+    width: 50px;
+    height: 30px;
+    margin-left: -50px;
+    margin-right: 20px;
+  }
+ 
+  .downBtn{
+   width: 50px;
+   height: 30px;
+   margin-left: -30px;
+   margin-right: -100px;
+  }
+ 
+  .baixar{
+    display: none;
+  }
+  
+  .print{
+    width: 50px;
+    height: 30px;
+   margin-left: -40px;
+   
+ }
+ }
+  
+  
+ @media (min-width: 992px) {
+  .modal{
+   width: 650px;
+   height: 650px ;
+   
+   
+ 
+  }
+ 
+  .file{
+    width: 200px;
+    height: 30px;
+    margin-left: -200px;
+   
+  
+  }
+ 
+  .upBtn{
+    width: 50px;
+    height: 30px;
+    margin-left: -300px;
+    margin-right: -400px;
+  }
+ 
+  .downBtn{
+   width: 50px;
+   height: 30px;
+   margin-left: -30px;
+   margin-right: -400px;
+ 
+  }
+ 
+  .baixar{
+    display: none;
+  }
+
+  .print{
+   width: 50px;
+   height: 30px;
+   margin-right: -100px;
+   margin-left: -10px;
+   
+ }
+
+ }
+
+ @media (min-width: 1200px) {
+  .modal{
+   width: 700px;
+   height: 700px ;
+ 
+ 
+  }
+  .file{
+    width: 250px;
+    margin-left: -20px;
+    margin-right: -100px;
+  }
+ 
+  .upBtn{
+    margin-right: -30px;
+    margin-left: -180px
+    
+    
+  }
+  
+  .downBtn{
+    justify-content: end;
+    align-items: flex-end;
+    
+  }
+  
+  .print{
+  justify-content: end;
+  align-items: flex-end;
+   width: 50px;
+   height: 30px;
+   margin-right: -300px;
+   
+ }
+  
+ }

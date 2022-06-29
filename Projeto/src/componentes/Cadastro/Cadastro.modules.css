@@ -21,7 +21,7 @@ form{
  background-color: rgb(24, 24, 24) ;
  border-radius: 6px;
  padding-left: 7%;
- padding-top: 5%;
+ padding-top: 3%;
  width: 400px;
  height: 730px;
  margin-top: 10%;
@@ -58,3 +58,102 @@ margin-left: 200px;
 .inputM{
   width: 70px;
 }
+
+
+@media(min-width: 768px) {
+
+form{
+    padding-top: 8%;
+  
+  
+}
+
+
+}
+
+@media(min-width: 768px) {
+
+  form{
+      padding-top: 7%;
+      margin-left: 350px;
+      margin-right: 100px;
+    
+    
+  }
+}
+
+@media (max-width: 600px){
+
+form{
+   padding-top: 10%;
+   margin-left: 90px;
+   padding-left: 70px;
+
+  }
+
+.Eye{
+   margin-left: 50%;
+  }
+
+}
+
+@media(min-width: 600px){
+  form{
+    padding-top: 7%;
+    margin-left: 150px;
+    padding-left: 70px;
+   }
+
+   .Eye{
+    margin-left: 50%;
+   }
+ 
+
+}
+
+
+@media(min-width: 992px){
+  
+  form{
+    padding-top: 5%;
+    margin-left: 300px;
+ 
+   }
+
+   .Eye{
+    margin-left: 52%;
+   }
+ 
+
+}
+
+@media(min-width: 1200px){
+
+  form{
+    padding-top: 4%;
+    margin-left: 600px;
+ 
+   }
+
+   .Eye{
+    margin-left: 52%;
+   }
+ 
+
+}
+
+@media(min-width: 1600px){
+  form{
+    padding-top: 5%;
+    margin-left: 600px;
+ 
+   }
+
+   .Eye{
+    margin-left: 59%;
+   }
+ 
+
+}
+
+

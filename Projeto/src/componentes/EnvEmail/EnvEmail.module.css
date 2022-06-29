@@ -12,3 +12,59 @@ margin-top: 20%;
 margin-right: 50%;
 margin-left: 30%;
 }
+
+
+
+@media(max-width: 600px){
+ .formEnv{
+     margin-left: 200px;
+     padding-left: 50px;
+     padding-top: 20px;
+     margin-top: 200px;
+ }
+}
+
+@media(min-width: 600px){
+.formEnv{
+ margin-left: 200px;
+ padding-left: 50px;
+ padding-top: 20px;
+ margin-top: 200px;
+    }
+   }
+
+ @media(min-width: 768px){
+ .formEnv{
+ margin-left: 400px;
+ padding-left: 50px;
+ padding-top: 20px;
+ margin-top: 200px;
+    }
+ }
+
+  @media(min-width: 992px){
+.formEnv{
+ margin-left: 400px;
+ padding-left: 50px;
+ padding-top: 20px;
+ margin-top: 200px;
+  }
+}
+
+@media(min-width: 1200px){
+.formEnv{
+ margin-left: 600px;
+ padding-left: 50px;
+ padding-top: 20px;
+ margin-top: 200px;
+ }
+}
+
+@media(min-width: 1600px){
+.formEnv{
+ margin-left: 800px;
+ padding-left: 50px;
+ padding-top: 20px;
+ margin-top: 200px;
+  }
+ }

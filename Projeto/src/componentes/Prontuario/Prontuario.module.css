@@ -15,3 +15,56 @@
 .show{
     display: block !important;
 }
+
+
+@media (max-width: 600px) {
+.FcFolder{
+     margin-left: 90px;
+     margin-top: 300px;
+       
+    } 
+}
+
+@media (min-width: 600px) {
+.FcFolder{
+         margin-left: 200px;
+         margin-top: 300px;
+           
+    } 
+}
+
+@media (min-width: 768px) {
+ .FcFolder{
+ margin-left: 250px;
+ margin-top: 300px;
+               
+    } 
+}
+
+@media (min-width: 992px) {
+ .FcFolder{
+ margin-left: 350px;
+ margin-top: 300px;
+                  
+       } 
+   }
+
+
+@media (min-width: 1200px) {
+
+ .FcFolder{
+  margin-left: 500px;
+  margin-top: 300px;
+                     
+         
+ } 
+}
+
+@media (min-width: 1600px) {
+
+.FcFolder{
+    margin-left: 750px;
+    margin-top: 300px;
+                        
+ } 
+}

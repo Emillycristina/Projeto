@@ -57,3 +57,74 @@ Button {
 }
 
 
+
+@media(max-width: 600px){
+
+  .Form{
+    
+    margin-left: 150px;
+    padding-left: 80px;
+    padding-top: 20px;
+    margin-top: 230px;
+
+  }
+
+.Openeye {
+  margin-left: 55%;
+
+  }
+
+
+}
+
+@media(min-width: 600px){
+.Form{
+    margin-left: 150px;
+    padding-left: 80px;
+    padding-top: 20px;
+    margin-top: 230px;
+  }
+
+}
+
+@media(min-width: 768px){
+  .Form{
+    margin-left: 200px;
+    padding-left: 80px;
+    padding-top: 20px;
+    margin-top: 230px;
+  }
+
+
+}
+
+@media(min-width: 992px){
+  .Form{
+    margin-left: 500px;
+    padding-left: 80px;
+    padding-top: 20px;
+    margin-top: 230px;
+  }
+
+}
+
+@media(min-width: 1200px){
+.Form{
+    margin-left: 600px;
+    padding-left: 80px;
+    padding-top: 20px;
+    margin-top: 230px;
+  }
+
+}
+
+@media(min-width: 1200px){
+  .Form{
+    margin-left: 700px;
+    padding-left: 80px;
+    padding-top: 20px;
+    margin-top: 230px;
+  }
+
+
+}
