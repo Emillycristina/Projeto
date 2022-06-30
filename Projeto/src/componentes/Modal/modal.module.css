@@ -22,7 +22,7 @@ transform: translate(-50%, -50%);
 .modal {
 width: 700px;
 height: 700px;
-background: rgb(194, 192, 192);
+background: rgb(230, 227, 227);
 color: white;
 z-index: 10;
 border-radius: 16px;
@@ -43,13 +43,13 @@ border-top-right-radius: 2px;
 .heading {
  margin: 0;
  padding: 10px;
- color: #2c3e50;
+ color: black;
  font-weight: 500;
  font-size: 18px;
  text-align: center;
 }
 
-  .closeBtn {
+.closeBtn {
 cursor: pointer;
 font-weight: 500;
 padding: 4px 8px;
@@ -96,23 +96,29 @@ align-items: center;
 .downBtn{
     height: 39px;
     border-radius:4px ;
-    margin-bottom: 18px;
-}
+    float: inline-end;
+    align-items: flex-end;
+ 
+  }
 
 .upBtn{
     width: 70px;
     height: 39px;
     border-radius:4px ;
-    margin-bottom: 18px;
-    margin-left: -146px;
+    margin-bottom: 30px;
+    float: left;
+    align-items: flex-start;
+    
 }
 
 .print{
   width: 50px;
   height: 30px;
   border-radius: 4px;
-  margin-bottom: 18px;
-
+  margin-bottom: 30px;
+  float: left;
+  align-items: flex-end;
+  
 }
 .file{
     width: 210px;
@@ -121,16 +127,15 @@ align-items: center;
     cursor: pointer;
     background-color:rgb(155, 154, 154);
     color: black;
+    align-items: flex-start;
+    margin-top: 20px;
 }
 
 .file:hover {
   color: white;
 }
 
-.down{
- margin-bottom: 2px ;
- margin-top: 1px ;
-}
+
 
 .baixar{
   color: black;
@@ -140,7 +145,23 @@ align-items: center;
   color: white;
 }
 
+.container1 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-direction: row;
+  text-align: center;
+  margin-bottom: -7px ;
+}
 
+.container2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: flex-start;
+  margin-bottom: -7px ;
+}
 
 @media (max-width: 600px) {
  .modal{
@@ -153,22 +174,19 @@ align-items: center;
  .file{
    width: 140px;
    height: 30px;
-   margin-left: -20px;
    cursor: pointer;
  }
 
  .upBtn{
    width: 40px;
    height: 30px;
-   margin-left: -40px;
-   margin-right: 50px;
+ 
  }
 
  .downBtn{
   width: 40px;
   height: 30px;
-  margin-left: -25px;
-  margin-right: -40px;
+ 
  }
 
  .baixar{
@@ -178,8 +196,10 @@ align-items: center;
  .print{
   width: 40px;
   height: 30px;
-  margin-left: -5px;
+  
  }
+
+ 
 } 
 
 
@@ -195,22 +215,21 @@ align-items: center;
   .file{
     width: 130px;
     height: 30px;
-    margin-left: -20px;
+    cursor: pointer;
+    
   }
  
   .upBtn{
     width: 40px;
     height: 30px;
-    margin-left: -40px;
-    margin-right: 50px;
+   
     
   }
  
   .downBtn{
    width: 40px;
    height: 30px;
-   margin-left: -25px;
-   margin-right: -40px;
+  
   }
  
   .baixar{
@@ -219,8 +238,7 @@ align-items: center;
   
   .print{
     width: 40px;
-    height: 30px;
-    margin-left: -5px;
+    
    
  }
 }
@@ -235,22 +253,20 @@ align-items: center;
   .file{
     width: 180px;
     height: 30px;
-    margin-left: -50px;
-    margin-right: -80px;
+    cursor: pointer;
+   
   }
  
   .upBtn{
     width: 50px;
     height: 30px;
-    margin-left: -50px;
-    margin-right: 20px;
+  
   }
  
   .downBtn{
    width: 50px;
    height: 30px;
-   margin-left: -30px;
-   margin-right: -100px;
+
   }
  
   .baixar{
@@ -260,8 +276,7 @@ align-items: center;
   .print{
     width: 50px;
     height: 30px;
-   margin-left: -40px;
-   
+  
  }
  }
   
@@ -278,7 +293,8 @@ align-items: center;
   .file{
     width: 200px;
     height: 30px;
-    margin-left: -200px;
+    cursor: pointer;
+   
    
   
   }
@@ -286,15 +302,13 @@ align-items: center;
   .upBtn{
     width: 50px;
     height: 30px;
-    margin-left: -300px;
-    margin-right: -400px;
+   
   }
  
   .downBtn{
    width: 50px;
    height: 30px;
-   margin-left: -30px;
-   margin-right: -400px;
+  
  
   }
  
@@ -305,9 +319,7 @@ align-items: center;
   .print{
    width: 50px;
    height: 30px;
-   margin-right: -100px;
-   margin-left: -10px;
-   
+  
  }
 
  }
@@ -321,13 +333,13 @@ align-items: center;
   }
   .file{
     width: 250px;
-    margin-left: -20px;
-    margin-right: -100px;
+    cursor: pointer;
+  
   }
  
   .upBtn{
-    margin-right: -30px;
-    margin-left: -180px
+    justify-content: start;
+    align-items: flex-start;
     
     
   }
@@ -339,11 +351,11 @@ align-items: center;
   }
   
   .print{
-  justify-content: end;
-  align-items: flex-end;
+   justify-content: end;
+   align-items: flex-end;
    width: 50px;
    height: 30px;
-   margin-right: -300px;
+  
    
  }
   

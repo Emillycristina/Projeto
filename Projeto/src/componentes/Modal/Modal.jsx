@@ -1,13 +1,18 @@
 import style from "./modal.module.css";
-import React, {useState} from "react";
-import {AiOutlineClose,AiOutlineUpload, AiOutlineDownload,AiFillPrinter} from "react-icons/ai";
+import * as React from "react";
+import {AiOutlineClose, AiOutlineDownload,AiFillPrinter} from "react-icons/ai";
+import Button from '@mui/material/Button';
+import ButtonGroup from '@mui/material/ButtonGroup';
+import { styled } from '@mui/material/styles';
 
-
+const Input = styled('input')({
+  display: 'none',
+});
 
 const Modal = ({setIsOpen}) => {
  
-   
-  return (
+  
+ return (
   <div>
      
    <div className={style.darkBG} onClick={() => setIsOpen(false)}/>
@@ -27,17 +32,23 @@ const Modal = ({setIsOpen}) => {
           <div className={style.modalActions}>
          
             <div className={style.actionsContainer}>
+             <div className={style.container1}>
 
             
-            
-            <input type="file" className={style.file} /><button type="submit" className={style.upBtn} onClick={() => setIsOpen(true)}>
-            <AiOutlineUpload size="18px" /></button>
-            <div className={style.botoes}>
-            <button  className={style.downBtn} onClick={() => setIsOpen(true)}>
-            <p className={style.baixar}>Baixar</p> <AiOutlineDownload size="18px" className={style.down} />
-            </button>
-            <button className={style.print} ><AiFillPrinter size="18px"  /></button>
+             <label htmlFor="contained-button-file">
+             <Input accept="image/*" id="contained-button-file" multiple type="file" />
+             <Button style={{background: "black"}} variant="contained" component="span">
+              Upload
+            </Button></label>
+             
             </div>
+
+            <ButtonGroup variant="contained" aria-label="outlined primary button group">
+            <Button style={{background:"black", color:"white"}} onClick={() => setIsOpen(true)}><AiOutlineDownload size="18px"  /></Button>
+            <Button style={{background:"black" ,color:"white"}}onClick={() => setIsOpen(true)}><AiFillPrinter size="18px"  /></Button>
+            </ButtonGroup>
+            
+     
            </div>
           </div>
          </div>

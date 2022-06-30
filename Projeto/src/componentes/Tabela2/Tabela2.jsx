@@ -1,4 +1,4 @@
-import style from "./tabela.module.css";
+
 import React from "react";
 import { styled } from '@mui/material/styles';
 import Table from '@mui/material/Table';
@@ -10,6 +10,7 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
+import { Button } from "@mui/material";
 
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
@@ -32,7 +33,7 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   },
 }));
 
-function createData(Nome, CPF, Matrícula, Situação, Contratação) {
+function createData(Nome, CPF, Matrícula, Situação, Contratação, ) {
   return { Nome, CPF, Matrícula, Situação, Contratação};
 }
 
@@ -51,6 +52,7 @@ export default function CustomizedTables() {
             <StyledTableCell align="right">Matrícula&nbsp;</StyledTableCell>
             <StyledTableCell align="right">Situação&nbsp;</StyledTableCell>
             <StyledTableCell align="right">Contratação&nbsp;</StyledTableCell>
+            <StyledTableCell align="right">Contratação&nbsp;</StyledTableCell>
          </TableRow>
         </TableHead>
         <TableBody>
@@ -63,6 +65,7 @@ export default function CustomizedTables() {
               <StyledTableCell align="right">{row.Matrícula}</StyledTableCell>
               <StyledTableCell align="right">{row.Situação}</StyledTableCell>
               <StyledTableCell align="right">{row.Contratação}</StyledTableCell>
+              <StyledTableCell align="right">{row.Contratação}</StyledTableCell>
               
            </StyledTableRow>
           
@@ -70,9 +73,11 @@ export default function CustomizedTables() {
          </TableBody>
         
       </Table>
+      
       <Stack spacing={2}>   
        <Pagination count={1} size="small" align="center" />
       </Stack>
+      <Button style={{background:"black"}}variant="contained">Editar</Button>
       
     </TableContainer>
    
