@@ -8,9 +8,9 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import Pagination from '@mui/material/Pagination';
-import Stack from '@mui/material/Stack';
 import { Button } from "@mui/material";
+import { MdReadMore } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
@@ -33,12 +33,12 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   },
 }));
 
-function createData(Nome, CPF, Matrícula, Situação, Contratação, ) {
-  return { Nome, CPF, Matrícula, Situação, Contratação};
+function createData(Nome, CPF, Matrícula, Contratação, Situação, ) {
+  return { Nome, CPF, Matrícula, Contratação, Situação};
 }
 
 const rows = [
-  createData('Nome', 'CPF', 'Matrícula', 'Situação', 'Contratação',)
+  createData('Nome', 'CPF', 'Matrícula','Contratação','Situação')
 ];
 
 export default function CustomizedTables() {
@@ -50,9 +50,9 @@ export default function CustomizedTables() {
             <StyledTableCell>Nome&nbsp;</StyledTableCell>
             <StyledTableCell align="right">CPF&nbsp;</StyledTableCell>
             <StyledTableCell align="right">Matrícula&nbsp;</StyledTableCell>
+            <StyledTableCell align="right">Contratação&nbsp;</StyledTableCell>
             <StyledTableCell align="right">Situação&nbsp;</StyledTableCell>
-            <StyledTableCell align="right">Contratação&nbsp;</StyledTableCell>
-            <StyledTableCell align="right">Contratação&nbsp;</StyledTableCell>
+            
          </TableRow>
         </TableHead>
         <TableBody>
@@ -63,9 +63,9 @@ export default function CustomizedTables() {
               </StyledTableCell>
               <StyledTableCell align="right">{row.CPF}</StyledTableCell>
               <StyledTableCell align="right">{row.Matrícula}</StyledTableCell>
+              <StyledTableCell align="right">{row.Contratação}</StyledTableCell>
               <StyledTableCell align="right">{row.Situação}</StyledTableCell>
-              <StyledTableCell align="right">{row.Contratação}</StyledTableCell>
-              <StyledTableCell align="right">{row.Contratação}</StyledTableCell>
+              
               
            </StyledTableRow>
           
@@ -73,13 +73,14 @@ export default function CustomizedTables() {
          </TableBody>
         
       </Table>
-      
-      <Stack spacing={2}>   
-       <Pagination count={1} size="small" align="center" />
-      </Stack>
-      <Button style={{background:"black"}}variant="contained">Editar</Button>
-      
+     
+      <Button  style={{background:"black"}}  variant="contained">Editar</Button>
+      <Button  style={{background:"black", marginLeft:"1px", width:"100px" , paddingTop:"10px"}}  variant="contained">Mais<MdReadMore size="22"/></Button>
     </TableContainer>
+
    
-  );
+ 
+ 
+ 
+   );
 }
