@@ -21,6 +21,7 @@ export default function Prontuario(){
        <Tabela2/>
        
        </div>
+       <br></br>
     
        <Cadastro2/>
       

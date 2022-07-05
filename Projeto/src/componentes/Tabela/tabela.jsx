@@ -10,6 +10,7 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
+import { Button } from "@mui/material";
 
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
@@ -73,7 +74,7 @@ export default function CustomizedTables() {
       <Stack spacing={2}>   
        <Pagination count={1} size="small" align="center" />
       </Stack>
-      
+      <Button  style={{background:"black"}}  variant="contained">Editar</Button>
     </TableContainer>
    
   );

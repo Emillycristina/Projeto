@@ -9,7 +9,6 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { Button } from "@mui/material";
-import { MdReadMore } from "react-icons/md";
 import { Link } from "react-router-dom";
 
 
@@ -74,8 +73,8 @@ export default function CustomizedTables() {
         
       </Table>
      
-      <Button  style={{background:"black"}}  variant="contained">Editar</Button>
-      <Button  style={{background:"black", marginLeft:"1px", width:"100px" , paddingTop:"10px"}}  variant="contained">Mais<MdReadMore size="22"/></Button>
+      
+      
     </TableContainer>
 
    
