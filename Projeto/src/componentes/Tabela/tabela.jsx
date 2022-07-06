@@ -74,7 +74,7 @@ export default function CustomizedTables() {
       <Stack spacing={2}>   
        <Pagination count={1} size="small" align="center" />
       </Stack>
-      <Button  style={{background:"black"}}  variant="contained">Editar</Button>
+      <Button style={{background:"black"}}  variant="contained">Editar</Button>
     </TableContainer>
    
   );

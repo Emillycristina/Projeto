@@ -13,7 +13,9 @@ import Modal from "./componentes/Modal/Modal";
 
 
 
+
 function App() {
+ 
   const [isLoading, setIsLoading] = useState("");
   useEffect(() =>{
    setTimeout(() =>{
@@ -38,8 +40,6 @@ function App() {
         <Route path='/pagina404' element={<Pagina404/>} /> 
         <Route path= '/prontuario' element={<Prontuario/>}/>
         <Route path= '/modal' element={<Modal/>}/>
-        
-       
        </Routes>
      </BrowserRouter>
     

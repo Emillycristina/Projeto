@@ -1,42 +1,34 @@
-import style from "./Prontuario.module.css";
+
 import Navigation from "../navbar/Navigation";
-import {FcFolder} from "react-icons/fc";
-import React, {useState} from "react";
-import Modal from "../Modal/Modal";
-import Tabela2 from "../Tabela2/Tabela2";
-import Cadastro2 from "../Cadastro2/Cadastro2";
+import React from "react";
+import LabTabs from "../LabTabs/LabTabs"
 
 
 
 
 export default function Prontuario(){
     
-     const[isOpen,setIsOpen]=useState(false);
-
+     
    return (
     
-     <div>
-        <Navigation/>
+      <div>
+       
        <div>
-       <Tabela2/>
-       
+        <Navigation/>
        </div>
-       <br></br>
-    
-       <Cadastro2/>
+
+      
+       <div style={{marginLeft:"20px"}}>
+       <LabTabs />
+       </div>
       
       
+       
      
-       <br></br>
-       <div className={style.FcFolder}>
-       <FcFolder size="80" className={style.folder} onClick={() => setIsOpen(true)}/>
-       <FcFolder size="80" className={style.folder} onClick={() => setIsOpen(true)}/>
-       <FcFolder size="80" className={style.folder} onClick={() => setIsOpen(true)}/>
-       <FcFolder size="80" className={style.folder} onClick={() => setIsOpen(true)}/>
-       {isOpen && <Modal setIsOpen={setIsOpen} />}
-       </div>
        
-       <hr></hr>
+      
+       
+     
        
         
     
