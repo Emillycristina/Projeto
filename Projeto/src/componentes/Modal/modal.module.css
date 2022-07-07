@@ -22,7 +22,7 @@ transform: translate(-50%, -50%);
 .modal {
 width: 700px;
 height: 700px;
-background: rgb(230, 227, 227);
+background: white;
 color: white;
 z-index: 10;
 border-radius: 16px;

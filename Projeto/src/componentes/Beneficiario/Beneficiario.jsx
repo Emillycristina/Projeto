@@ -7,14 +7,26 @@ import InputLabel from '@mui/material/InputLabel'
 
 
 
+
 export default function Beneficiario(){
+    
    
-  
+   //const [number, setNumber] = useState("")
+   //const [div, setDiv] = useState("")
+    
+   //function geraCampo(e) {
+   // while(number.length > 0) {
+  // 
+   //}
+   //
+   //}
+
+
     return(
   
     <Box
     
-        component="form" style={{background:"white", width:"800px", marginTop:"-85px", marginLeft:"-50px", height:"800px", marginBottom:"10px"}}
+        component="form" style={{background:"white", width:"800px", marginTop:"-85px", marginLeft:"-40px", height:"800px", marginBottom:"10px"}}
         sx={{
           '& .MuiTextField-root': { m: 1, width: ' 30ch' },
         }}
@@ -24,15 +36,16 @@ export default function Beneficiario(){
     >
 
       
-      <div  style={{ marginLeft:"-10px", marginTop:"60px", width:"300px"}}>
+      <div  style={{ marginLeft:"-20px", marginTop:"90px", width:"300px"}}>
          
           <InputLabel variant="standard" id="demo-simple-select-label" style={{marginLeft:"20px", marginRight:"5px",marginBottom:"5px"}}>
-          <i><b>Beneficiários:</b></i>
+          <i>Beneficiários:</i>
           </InputLabel>
-          <br></br>
+         
           <TextField  variant ="standard"
             required
-           id="outlined-number"
+            //value={number}
+            id="outlined-number"
             label=""
             type="number"
             InputLabelProps={{
@@ -43,24 +56,43 @@ export default function Beneficiario(){
            <TextField variant ="standard"
             
             required
+           // value={Nome}
             label="Nome" 
             id="outlined-required"
             
           /> 
+           <TextField variant ="standard"
+            
+            required
+            //value={cpf}
+            label="CPF" 
+            id="outlined-required"
+            
+          /> 
+
+          <TextField variant ="standard"
+            
+            required
+            //value={Grau}
+            label="Grau de Parentesco" 
+            id="outlined-required"
+            
+          />
+      
       
       
         
       
-         <Button style={{background: "black", marginTop:"50px", marginLeft:"5px"}} variant="contained" component="span">
-             Atualizar
-         </Button>  
         
       
       
       </div>
     
     
-    
+      <Button style={{background: "black", marginTop:"50px", marginLeft:"5px"}} variant="contained" component="span">
+             Atualizar
+      </Button>  
+        
           
 
        

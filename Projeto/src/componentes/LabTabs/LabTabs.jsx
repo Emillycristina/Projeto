@@ -57,12 +57,12 @@ export default function BasicTabs() {
   };
 
   return (
-    <Box sx={{ width: '50%' , marginLeft:"30px", marginTop:"30px", marginBottom:"40px"}}>
+    <Box sx={{ width: '50%' , marginLeft:"40px", marginTop:"30px", marginBottom:"40px", marginRight:"200px", paddingLeft:"500px"}}>
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
         <Tabs value={value} onChange={handleChange} aria-label="basic tabs example" >
           <Tab label="CADASTRO" style={{color:"black"}} {...a11yProps(0)} />
           <Tab label="SITUAÇÃO" style={{color:"black"}} {...a11yProps(1)} />
-          <Tab label="BENEFICIÁRIOS" style={{color:"black"}} {...a11yProps(2)} />
+          <Tab label="BENEFIC." style={{color:"black"}} {...a11yProps(2)} />
           <Tab label="DOCs" style={{color:"black"}} {...a11yProps(3)} />
         </Tabs>
       </Box>

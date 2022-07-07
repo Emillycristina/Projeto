@@ -21,7 +21,7 @@ export default function Situacao(){
      >
        
      
-     <div style={{background:"white", marginRight:"80px", marginTop:"90px" }}>
+     <div style={{background:"white", marginRight:"80px", marginTop:"100px" }}>
        
         <InputLabel variant="standard" id="demo-simple-select-label" style={{marginLeft:"20px", marginRight:"5px",marginBottom:"5px"}}>
         <i>Tipo de contratação:*</i>
