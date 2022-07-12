@@ -11,7 +11,7 @@ import Paper from '@mui/material/Paper';
 import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
 import { Button } from "@mui/material";
-
+import {Link} from "react-router-dom";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -74,7 +74,7 @@ export default function CustomizedTables() {
       <Stack spacing={2}>   
        <Pagination count={1} size="small" align="center" />
       </Stack>
-      <Button style={{background:"black"}}  variant="contained">Editar</Button>
+      <Button style={{background:"black"}}  variant="contained"><Link to="/prontuario" style={{color:"white", textDecoration:"none" }}>Editar</Link></Button>
     </TableContainer>
    
   );

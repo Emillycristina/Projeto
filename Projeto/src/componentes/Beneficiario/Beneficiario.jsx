@@ -4,6 +4,7 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import { NativeSelect} from "@mui/material";
 import InputLabel from '@mui/material/InputLabel'
+import { useState } from 'react';
 
 
 
@@ -11,15 +12,18 @@ import InputLabel from '@mui/material/InputLabel'
 export default function Beneficiario(){
     
    
-   //const [number, setNumber] = useState("")
-   //const [div, setDiv] = useState("")
+   const [number, setNumber] = useState("")
+   const [div, setDiv] = useState("")
+
     
-   //function geraCampo(e) {
-   // while(number.length > 0) {
-  // 
-   //}
-   //
-   //}
+   const handleClick = (setNumber, setDiv) => {
+    setNumber.event.target.value
+     return setDiv * setNumber.value
+    
+
+
+
+    }
 
 
     return(
@@ -36,7 +40,7 @@ export default function Beneficiario(){
     >
 
       
-      <div  style={{ marginLeft:"-20px", marginTop:"90px", width:"300px"}}>
+      <div onChange = {(e) => setDiv(e.target.value)} value ={div}  style={{ marginLeft:"-20px", marginTop:"90px", width:"300px"}}>
          
           <InputLabel variant="standard" id="demo-simple-select-label" style={{marginLeft:"20px", marginRight:"5px",marginBottom:"5px"}}>
           <i>Beneficiários:</i>
@@ -44,14 +48,17 @@ export default function Beneficiario(){
          
           <TextField  variant ="standard"
             required
-            //value={number}
+            value={number}
+            onChange = {(e) => setNumber(e.target.value)}
             id="outlined-number"
             label=""
             type="number"
+            onClick={() => handleClick()}
             InputLabelProps={{
             shrink: true,
           }}
            
+
           /> 
            <TextField variant ="standard"
             
@@ -109,13 +116,6 @@ export default function Beneficiario(){
       
         
         
-        
-         
-
-        
-       
-        
-       
       </Box>
     );  
 

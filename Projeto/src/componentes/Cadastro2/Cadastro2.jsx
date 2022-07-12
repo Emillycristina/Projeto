@@ -4,6 +4,7 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import { NativeSelect} from "@mui/material";
 import InputLabel from '@mui/material/InputLabel'
+import { IMaskInput } from "react-imask";
 
 
 
@@ -35,12 +36,13 @@ export default function Cadastro2(){
             
           />
           <TextField variant ="standard"
+            
             required
             id="outlined-required"
             label="CPF"
-            
           />
-          <TextField variant ="standard"
+          
+          <TextField variant ="standard" 
             id="outlined-telefone-input"
             label="Telefone"
             type="tel"

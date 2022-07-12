@@ -17,10 +17,11 @@ import Modal from "./componentes/Modal/Modal";
 function App() {
  
   const [isLoading, setIsLoading] = useState("");
+
   useEffect(() =>{
    setTimeout(() =>{
      setIsLoading(false);
-   }, 3500);
+   }, 2000);
   
   });
 

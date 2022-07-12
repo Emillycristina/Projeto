@@ -5,6 +5,8 @@ import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
 import { styled } from '@mui/material/styles';
 import { FaTrash } from "react-icons/fa";
+import { RiSendPlaneFill } from "react-icons/ri";
+import IconButton from '@mui/material/IconButton';
 
 const Input = styled('input')({
   display: 'none',
@@ -40,14 +42,17 @@ const Modal = ({setIsOpen}) => {
              <Input accept="image/*" id="contained-button-file" multiple type="file" />
              <Button style={{background: "black"}} variant="contained" component="span">
               Upload
-            </Button></label>
-             
+             </Button></label>
+             <IconButton style={{background:"black", color:"white",  cursor:"pointer", width:"35px", marginRight:"-20px"}} onClick={() => setIsOpen(true)} ><RiSendPlaneFill
+             size="18px"  /></IconButton>
+           
             </div>
+           
 
             <ButtonGroup variant="contained" aria-label="outlined primary button group">
-            <Button style={{background:"black", color:"white"}} onClick={() => setIsOpen(true)}><AiOutlineDownload size="18px"  /></Button>
-            <Button style={{background:"black" ,color:"white"}}onClick={() => setIsOpen(true)}><AiFillPrinter size="18px"  /></Button>
-            <Button style={{background:"black" ,color:"white"}}onClick={() => setIsOpen(true)}><FaTrash size="18px"  /></Button>
+            <Button style={{background:"black", color:"white",  cursor:"pointer"}} onClick={() => setIsOpen(true)}><AiOutlineDownload size="18px"  /></Button>
+            <Button style={{background:"black" ,color:"white" , cursor:"pointer"}}onClick={() => setIsOpen(true)}><AiFillPrinter size="18px"  /></Button>
+            <Button style={{background:"black" ,color:"white" , cursor:"pointer"}}onClick={() => setIsOpen(true)}><FaTrash size="18px"  /></Button>
             </ButtonGroup>
             
      
@@ -62,5 +67,4 @@ const Modal = ({setIsOpen}) => {
 
 
 };
-
 export default Modal;
