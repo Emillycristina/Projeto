@@ -17,8 +17,10 @@ export default function Beneficiario(){
 
     
    const handleClick = (setNumber, setDiv) => {
-    setNumber.event.target.value
-     return setDiv * setNumber.value
+     setNumber.event.target.value
+     return (
+       setDiv * setNumber.value
+     ) 
     
 
 
@@ -50,10 +52,11 @@ export default function Beneficiario(){
             required
             value={number}
             onChange = {(e) => setNumber(e.target.value)}
+            onClick={() => handleClick()}
             id="outlined-number"
             label=""
             type="number"
-            onClick={() => handleClick()}
+            
             InputLabelProps={{
             shrink: true,
           }}
