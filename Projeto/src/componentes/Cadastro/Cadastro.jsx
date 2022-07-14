@@ -1,6 +1,7 @@
 import style from "./Cadastro.modules.css";
 import Button from "../Button/Button";
 import { useState } from "react";
+import React from "react";
 import { FaUserCircle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { BsFillEyeFill, BsFillEyeSlashFill} from "react-icons/bs";
@@ -19,7 +20,13 @@ export default function Cadastro() {
 
    const [show, setShow] = useState(false)
 
-     
+  function timeOut(){
+    setTimeout(() => {
+      setDisplay('none')
+      setAviso('')
+    }, 2000)
+  }
+ 
  
 
    const handleClick = (e) => {
@@ -55,7 +62,7 @@ export default function Cadastro() {
 validaConfirmSenha()
  
 
-  const confirmaSenha = (e) =>{
+const confirmaSenha = (e) =>{
     if(password.includes(e.target.value)){
     setConfirmPassword(e.target.value)
     setDisplay('none')
@@ -87,43 +94,38 @@ const validaCpf = (cpf) =>{
     return false;
      }
 }
-console.log(validaCpf(cpf));
+validaCpf();
 
 const cadastraUsuario = (validarEmail, validaSenha, validaCpf) => {
    
-  if(validarEmail(email) === false){
+   if(validarEmail(email) === false){
      setDisplay('flex')
      setAviso ('Insira um e-mail válido!')
      timeOut()
-    }else if(nome.length <= 3 ){
+  } else if(nome.length <= 3 ){
      setDisplay('flex')
-     setAviso ('Nome deve possuir mais que 5 caracteres!')
+     setAviso ('Nome deve possuir mais que 3 caracteres!')
      timeOut()  
-    } else if (validaSenha(password) === false){
+   } else if (validaSenha(password)=== false){
      setDisplay('flex')
      setAviso ('Senha deve possuir no mínimo 8 caracteres, uma letra maiúscula, uma letra minúscula e um caractere especial!')
      timeOut()  
-    } else if (matricula.length === 5){
-      setDisplay('flex')
-      setAviso ('A matrícula deve ter 5 números!')
-      timeOut()  
-    } else if(validaCpf(cpf) === false ) {
+  } else if (matricula.length === 5){
+     setDisplay('flex')
+     setAviso ('A matrícula deve ter 5 números!')
+      
+  }else if(validaCpf(cpf) === false ) {
       setDisplay('flex')
       setAviso(' Digite um cpf válido!')
-    }
-    cadastraUsuario()
- 
+   }   else{
+    console.log('dados corretos')
    }
+   cadastraUsuario()
+  }
 
 
-
-  function timeOut(){
-   setTimeout(() => {
-     setDisplay('none')
-     setAviso('')
-   }, 2000)
- }
-
+   
+ 
   
   return(
          
@@ -187,11 +189,11 @@ const cadastraUsuario = (validarEmail, validaSenha, validaCpf) => {
           <input type="text" id="matricula" value={matricula} className="inputM" placeholder="Digite sua matricula" onChange={(e) => setMatricula(e.target.value)}/><br></br><br></br>
            
 
-         <Button texto="Criar" id="button" type="button" />
-          {/* //onClick={function(e){
-          //e.preventDefautl()
-          //onChange ={(e) => cadastraUsuario(e)}}
-          //} */}
+         <Button texto="Cadastrar"  type="button"
+          onSubmit={function(e){
+          e.preventDefautl()
+          this.cadastraUsuario() }}
+          />
 
        </form>
 
