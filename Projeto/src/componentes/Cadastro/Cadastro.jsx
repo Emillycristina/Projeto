@@ -9,14 +9,14 @@ import { BsFillEyeFill, BsFillEyeSlashFill} from "react-icons/bs";
 
 export default function Cadastro() {
    
-   const [password, setPassword] = useState("")
-   const [nome, setNome] = useState("")
-   const [cpf, setCpf] = useState("")
-   const [matricula, setMatricula] = useState("")
-   const [email, setEmail] = useState("")
-   const [display,setDisplay] = useState("none")
-   const [confirmPassword, setConfirmPassword] = useState ("")
-   const [aviso, setAviso] = useState ("")
+   const [password, setPassword] = useState('')
+   const [nome, setNome] = useState('')
+   const [cpf, setCpf] = useState('')
+   const [matricula, setMatricula] = useState('')
+   const [email, setEmail] = useState('')
+   const [display,setDisplay] = useState('none')
+   const [confirmPassword, setConfirmPassword] = useState ('')
+   const [aviso, setAviso] = useState ('')
 
    const [show, setShow] = useState(false)
 
@@ -48,7 +48,7 @@ export default function Cadastro() {
   validaSenha()
 
  
- const validaConfirmSenha = (confirmPassword) =>
+  const validaConfirmSenha = (confirmPassword) =>
  {
   const reg = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[$*&@#])[0-9a-zA-Z$*&@#]{8,15}$/;
   if (reg.test(confirmPassword)){
@@ -59,10 +59,10 @@ export default function Cadastro() {
     }
 
  }
-validaConfirmSenha()
+  
+ validaConfirmSenha()
  
-
-const confirmaSenha = (e) =>{
+ const confirmaSenha = (e) =>{
     if(password.includes(e.target.value)){
     setConfirmPassword(e.target.value)
     setDisplay('none')
@@ -74,7 +74,6 @@ const confirmaSenha = (e) =>{
    }
 }
   
-
  const validarEmail = (email) =>
   {
   let reg = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
@@ -86,7 +85,7 @@ const confirmaSenha = (e) =>{
  } 
  validarEmail();
 
-const validaCpf = (cpf) =>{
+ const validaCpf = (cpf) =>{
    const reg = /^(([0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2})|([0-9]{11}))$/;
    if (reg.test(cpf)){
     return true; 
@@ -96,34 +95,34 @@ const validaCpf = (cpf) =>{
 }
 validaCpf();
 
-const cadastraUsuario = (validarEmail, validaSenha, validaCpf) => {
+
+ const cadastraUsuario = (validarEmail, validaSenha, validaCpf) => {
    
    if(validarEmail(email) === false){
      setDisplay('flex')
      setAviso ('Insira um e-mail válido!')
-     timeOut()
-  } else if(nome.length <= 3 ){
-     setDisplay('flex')
-     setAviso ('Nome deve possuir mais que 3 caracteres!')
+     timeOut() 
+  } else if(nome.length <= 5 ){
+   setDisplay('flex')
+     setAviso ('Nome deve possuir mais que 5 caracteres!')
      timeOut()  
-   } else if (validaSenha(password)=== false){
+   } else if (validaSenha(password) === false){
      setDisplay('flex')
      setAviso ('Senha deve possuir no mínimo 8 caracteres, uma letra maiúscula, uma letra minúscula e um caractere especial!')
      timeOut()  
   } else if (matricula.length === 5){
-     setDisplay('flex')
+    setDisplay('flex')
      setAviso ('A matrícula deve ter 5 números!')
       
-  }else if(validaCpf(cpf) === false ) {
-      setDisplay('flex')
-      setAviso(' Digite um cpf válido!')
+  } else if(validaCpf(cpf) === false ) {
+   setDisplay('flex')
+      setAviso('Digite um cpf válido!')
    }   else{
     console.log('dados corretos')
    }
    cadastraUsuario()
   }
-
-
+  
    
  
   
@@ -172,8 +171,8 @@ const cadastraUsuario = (validarEmail, validaSenha, validaCpf) => {
           </div><br />
 
           <label> Confirme sua Senha:</label><br></br>
-          <input  id="confirmSenha"
-          type={"password"} 
+          <input 
+          type="password"
           value={confirmPassword} 
           onChange={(e) => confirmaSenha(e)}/><br></br>
       
@@ -183,16 +182,18 @@ const cadastraUsuario = (validarEmail, validaSenha, validaCpf) => {
         
          <br></br>
          <p style={{display: display, color:"red", MarginTop:"2px", marginBottom:"5px"}}> {aviso} </p>
+        
           </div>
+          
           
           <label> Matrícula:</label><br></br>
           <input type="text" id="matricula" value={matricula} className="inputM" placeholder="Digite sua matricula" onChange={(e) => setMatricula(e.target.value)}/><br></br><br></br>
            
 
-         <Button texto="Cadastrar"  type="button"
-          onSubmit={function(e){
+         <Button texto="Cadastrar"  type="submit"
+          onClick={function(e){
           e.preventDefautl()
-          this.cadastraUsuario() }}
+          cadastraUsuario() }}
           />
 
        </form>
