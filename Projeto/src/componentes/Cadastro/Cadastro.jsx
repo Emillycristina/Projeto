@@ -5,6 +5,10 @@ import React from "react";
 import { FaUserCircle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { BsFillEyeFill, BsFillEyeSlashFill} from "react-icons/bs";
+import * as yup from "yup";
+import cpfNumber from "../../../../utils/cpf";
+import { yupResolver } from '@hookform/resolvers/yup';
+import { useForm } from "react-hook-form";
 
 
 export default function Cadastro() {
@@ -20,13 +24,20 @@ export default function Cadastro() {
 
    const [show, setShow] = useState(false)
 
-  function timeOut(){
-    setTimeout(() => {
-      setDisplay('none')
-      setAviso('')
-    }, 2000)
-  }
- 
+  
+  let schema = yup.object.shape({
+    nome: yup.string().required().min(3,"Nome está pequeno"),
+    cpf:  yup.number().required().matches(cpfNumber),
+    email: yup.string().email().required(),
+    password: yup.string().required().matches(cpfNumber, "A senha deve conter no mínimo 8 caracteres." + 
+                                                         "Uma letra minúscula e uma letra maiúscula e um caracter especial" ),
+    confirmPassword: yup.string()
+    .oneOf([yup.ref('password'), null], "As senhas precisam ser iguais"),
+    matricula: yup.number().required().min(5, "Matrícula deve posuir 5 dígitos")
+
+
+
+  })
  
 
    const handleClick = (e) => {
@@ -34,99 +45,10 @@ export default function Cadastro() {
       setShow(!show); 
   };
  
-   const validaSenha = (password) =>
-   {
-     const reg = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[$*&@#])[0-9a-zA-Z$*&@#]{8,15}$/;
-     if (reg.test(password)){
-      return true; 
-      }
-      else{
-      return false;
-      }
-    
-  }
-  validaSenha()
-
- 
-  const validaConfirmSenha = (confirmPassword) =>
- {
-  const reg = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[$*&@#])[0-9a-zA-Z$*&@#]{8,15}$/;
-  if (reg.test(confirmPassword)){
-    return true; 
-    }
-    else{
-    return false;
-    }
-
- }
-  
- validaConfirmSenha()
- 
- const confirmaSenha = (e) =>{
-    if(password.includes(e.target.value)){
-    setConfirmPassword(e.target.value)
-    setDisplay('none')
-   }else{
-    setConfirmPassword(e.target.value)
-    setDisplay('flex')
-    setAviso('As senhas precisam ser iguais')
-    
-   }
-}
-  
- const validarEmail = (email) =>
-  {
-  let reg = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
-  if (reg.test(email)){
-  return true; 
- } else{
-  return false;
-   }
- } 
- validarEmail();
-
- const validaCpf = (cpf) =>{
-   const reg = /^(([0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2})|([0-9]{11}))$/;
-   if (reg.test(cpf)){
-    return true; 
-   } else{
-    return false;
-     }
-}
-validaCpf();
-
-
- const cadastraUsuario = (validarEmail, validaSenha, validaCpf) => {
    
-   if(validarEmail(email) === false){
-     setDisplay('flex')
-     setAviso ('Insira um e-mail válido!')
-     timeOut() 
-  } else if(nome.length <= 5 ){
-   setDisplay('flex')
-     setAviso ('Nome deve possuir mais que 5 caracteres!')
-     timeOut()  
-   } else if (validaSenha(password) === false){
-     setDisplay('flex')
-     setAviso ('Senha deve possuir no mínimo 8 caracteres, uma letra maiúscula, uma letra minúscula e um caractere especial!')
-     timeOut()  
-  } else if (matricula.length === 5){
-    setDisplay('flex')
-     setAviso ('A matrícula deve ter 5 números!')
-      
-  } else if(validaCpf(cpf) === false ) {
-   setDisplay('flex')
-      setAviso('Digite um cpf válido!')
-   }   else{
-    console.log('dados corretos')
-   }
-   cadastraUsuario()
-  }
-  
-   
+
  
-  
-  return(
+ return(
          
       <div>
           
@@ -193,7 +115,7 @@ validaCpf();
          <Button texto="Cadastrar"  type="submit"
           onClick={function(e){
           e.preventDefautl()
-          cadastraUsuario() }}
+          }}
           />
 
        </form>
