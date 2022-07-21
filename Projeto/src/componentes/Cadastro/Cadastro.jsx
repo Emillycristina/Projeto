@@ -6,7 +6,6 @@ import { FaUserCircle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { BsFillEyeFill, BsFillEyeSlashFill} from "react-icons/bs";
 import * as yup from "yup";
-import cpfNumber from "../../../../utils/cpf";
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from "react-hook-form";
 
@@ -24,14 +23,16 @@ export default function Cadastro() {
 
    const [show, setShow] = useState(false)
 
-  
-  let schema = yup.object.shape({
+   const cpfNumber = /^[0-9]{3}.?[0-9]{3}.?[0-9]{3}-?[0-9]{2}$/;
+   const passwordNumber = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[$*&@#])[0-9a-zA-Z$*&@#]{8,}$/;
+
+
+const schema = yup.object.shape ({
     nome: yup.string().required().min(3,"Nome está pequeno"),
-    cpf:  yup.number().required().matches(cpfNumber),
+    cpf:  yup.string().required().matches( cpfNumber ),
     email: yup.string().email().required(),
-    password: yup.string().required().matches(cpfNumber, "A senha deve conter no mínimo 8 caracteres." + 
-                                                         "Uma letra minúscula e uma letra maiúscula e um caracter especial" ),
-    confirmPassword: yup.string()
+    password: yup.string().required().matches(passwordNumber , "A senha deve conter no mínimo 8 caracteres.Uma letra minúscula e uma letra maiúscula e um caracter especial" ),
+    confirmPassword: yup.string().required()
     .oneOf([yup.ref('password'), null], "As senhas precisam ser iguais"),
     matricula: yup.number().required().min(5, "Matrícula deve posuir 5 dígitos")
 
@@ -45,14 +46,16 @@ export default function Cadastro() {
       setShow(!show); 
   };
  
-   
+  const  { register , handleSubmit }  =  useForm ( { 
+   resolver : yupResolver (schema) , 
+ } ) ; 
 
  
  return(
          
       <div>
           
-       <form>
+       <form onSubmit = { handleSubmit ( ( d )  =>  console . log ( d ) ) }>
           <Link to="/login" style={{textDecoration:"none"}}><h4>Login<FaUserCircle size="19px"/></h4></Link><br></br>
           <hr></hr><br></br>
           <FaUserCircle size="80px" color="grey"  />
@@ -61,17 +64,17 @@ export default function Cadastro() {
           <label><h3>CADASTRO</h3></label><br></br>
 
           <label> Nome:</label><br></br>
-          <input type="text"  id="nome" value={nome} placeholder="Digite seu nome" onChange={(e) => setNome(e.target.value)}/><br></br><br></br>
+          <input type="text"   {...register('name')} placeholder="Digite seu nome" onChange={(e) => setNome(e.target.value)}/><br></br><br></br>
 
           <label> CPF:</label><br></br>
-          <input type="text"  id="cpf"  value={cpf} placeholder="Digite seu cpf" onChange={(e) => setCpf(e.target.value)} /><br></br><br></br>
+          <input type="text" {...register('cpf')}  placeholder="Digite seu cpf" onChange={(e) => setCpf(e.target.value)} /><br></br><br></br>
 
           <label> E-mail:</label><br></br>
-          <input type="text"  id="email" value={email} placeholder="Digite seu e-mail" onChange={(e) => setEmail(e.target.value)} /><br></br><br></br>
+          <input type="text"  {...register('email')}  placeholder="Digite seu e-mail" onChange={(e) => setEmail(e.target.value)} /><br></br><br></br>
        
 
           <label> Senha:</label><br></br>
-          <input   
+          <input   {...register('password')} 
           placeholder="Digite sua senha"
           type={show ? "text" : "password"} 
           value={password} 
@@ -93,7 +96,7 @@ export default function Cadastro() {
           </div><br />
 
           <label> Confirme sua Senha:</label><br></br>
-          <input 
+          <input {...register('confirmPassword')} 
           type="password"
           value={confirmPassword} 
           onChange={(e) => confirmaSenha(e)}/><br></br>
