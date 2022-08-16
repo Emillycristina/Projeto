@@ -9,13 +9,14 @@ import Cadastro2 from '../Cadastro2/Cadastro2';
 import Situacao from '../Situacao/Situacao';
 import Beneficiario from "../Beneficiario/Beneficiario"
 import Folder from "../Folder/Folder";
-
+import MediaQueryReact from 'media-query-react';
 
 
 
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
+  
   
   
 
@@ -56,8 +57,28 @@ export default function BasicTabs() {
     setValue(newValue);
   };
 
+  const screenSize = {
+    mobile: { 
+      minWidth: 320,
+      maxWidth: 480,
+    },
+    mobileLandscape: {
+      minWidth: 481,
+      maxWidth: 767,
+    },
+    tablet: {
+      minWidth: 768,
+      maxWidth: 1024,
+    },
+    desktop: {
+      minWidth: 1025,
+      maxWidth: 2500,
+    },
+  };
+
   return (
-    <Box sx={{ width: '50%' , marginLeft:"40px", marginTop:"30px", marginBottom:"40px", marginRight:"100px", paddingLeft:"500px"}}>
+    <MediaQueryReact mediaQueries={screenSize}>
+    <Box sx={{ width: '50hv' , marginLeft:"80px", marginTop:"30px", marginBottom:"40px", marginRight:"100px", paddingLeft:"500px", background: "white", borderRadius:"5px"}}>
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
         <Tabs value={value} onChange={handleChange} aria-label="basic tabs example" >
           <Tab label="CADASTRO" style={{color:"black"}} {...a11yProps(0)} />
@@ -79,5 +100,6 @@ export default function BasicTabs() {
         <Folder/>
       </TabPanel>
     </Box>
+  </MediaQueryReact>
   );
 }

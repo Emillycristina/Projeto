@@ -3,7 +3,7 @@ import Button from "../Button/Button";
 import { useState } from "react";
 import React from "react";
 import { FaUserCircle } from "react-icons/fa";
-import {  MdOutlineError } from "react-icons/md";
+//import {  MdOutlineError } from "react-icons/md";
 import { Link } from "react-router-dom";
 import { BsFillEyeFill, BsFillEyeSlashFill} from "react-icons/bs";
 import * as yup from "yup";
@@ -16,6 +16,16 @@ export default function Cadastro() {
    
    const [password, setPassword] = useState('')
    const [show, setShow] = useState(false)
+   const [campos, setCampos] = useState({
+      nome: '',
+      cpf: '',
+      email: '',
+      password: '',
+      confirmPassword: '',
+      matricula:''
+
+
+   });
 
    const cpfNumber = /^[0-9]{3}.?[0-9]{3}.?[0-9]{3}-?[0-9]{2}$/;
    const passwordNumber = /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8,10})/;
@@ -26,9 +36,8 @@ export default function Cadastro() {
 const schema = yup.object().shape ({
     nome: yup
     .string()
-    .required("Nome é um campo obrigatório!")
     .min(3, "É necessário ao menos 3 caracteres!")
-    .max(40, "Máximo de 40 caracteres"),
+    .required("Nome é um campo obrigatório!"),
     cpf:  yup
     .string()
     .required("Cpf é um campo obrigatório!")
@@ -48,15 +57,23 @@ const schema = yup.object().shape ({
     .oneOf([yup.ref('password'), null], "As senhas precisam ser iguais"),
     matricula: yup
     .number( "Matricula deve ser uma sequência de 5 números!")
-    .required("Matrícula é um campo obrigatório").min(5, "Matrícula deve posuir 5 dígitos").max(5, "Matrícula deve posuir 5 dígitos")
+    .required("Matrícula é um campo obrigatório").min(5, "Matrícula deve posuir 5 dígitos")
 
 
 
   })
 
-  const onSubmitHandler = (data) => {
+
+  const handleInputChange = (event) => {
+   campos[event.target.name] = event.target.value
+   setCampos(campos)
+  }
+
+  const onSubmitHandler = (data, e) => {
+  e.preventDefault()
   console.log({ data });
-  reset();
+  console.log(campos)
+
  };
  
 
@@ -69,6 +86,15 @@ const schema = yup.object().shape ({
   const  { register , handleSubmit, formState: { errors } }  =  useForm ( { 
    resolver : yupResolver (schema) , 
  } ) ; 
+
+
+ 
+ const pegarValor = (e) => {
+   setPassword(e.target.value)
+
+ 
+}
+
 
  
  return(
@@ -84,23 +110,26 @@ const schema = yup.object().shape ({
           <label><h3>CADASTRO</h3></label><br></br>
 
           <label> Nome:</label><br></br>
-          <input type="text"   {...register('name')} placeholder="Digite seu nome" /><br></br>
+          <input type="text"   {...register('nome')} id="nome" onChange={handleInputChange} placeholder="Digite seu nome" /><br></br>
           <p style={{color:"red", size:"7px"}}>{errors.nome?.message}</p>
 
           <label> CPF:</label><br></br>
-          <input type="text" {...register('cpf')}  placeholder="Digite seu cpf"/><br></br>
+          <input type="text" {...register('cpf')} id="cpf" onChange={handleInputChange} placeholder="Digite seu cpf"/><br></br>
           <p style={{color:"red", size:"7px"}}>{errors.cpf?.message}</p>
 
           <label> E-mail:</label><br></br>
-          <input type="text"  {...register('email')}  placeholder="Digite seu e-mail"  /><br></br>
+          <input type="text"  {...register('email')} id="email" onChange={handleInputChange} placeholder="Digite seu e-mail"  /><br></br>
           <p style={{color:"red", size:"7px"}}>{errors.email?.message}</p>
 
           <label> Senha:</label><br></br>
           <input   {...register('password')} 
           placeholder="Digite sua senha"
+          id="password"
           type={show ? "text" : "password"} 
           value={password} 
-          onChange={(e) => setPassword(e.target.value)}/><br></br>
+          onChange = {(e) => {pegarValor(e)}}
+          onKeyPress = {(e) => {handleInputChange(e)}}
+          /><br></br>
           <div>
           {show ? (
           <BsFillEyeFill 
@@ -120,7 +149,9 @@ const schema = yup.object().shape ({
 
           <label> Confirme sua Senha:</label><br></br>
           <input {...register('confirmPassword')} 
+          onChange={ handleInputChange}
           type="password"
+          id="confirmPassword"
            
           
           />
@@ -141,11 +172,14 @@ const schema = yup.object().shape ({
           <label> Matrícula:</label><br></br>
           <input type="text" {...register('matricula')}  
           className="inputM" placeholder="Digite sua matricula" 
+          id="matricula"
+          onChange={handleInputChange}
           defaultValue={0}/><br></br><br></br>
           <p style={{color:"red", size:"7px"}}>{errors.matricula?.message}</p>
 
 
          <Button texto="Cadastrar"  type="submit"
+         
           
           />
 

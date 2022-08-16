@@ -1,58 +1,177 @@
 import *  as React from 'react';
+import style from "./Beneficiario.module.css"
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
-import { NativeSelect} from "@mui/material";
+import MediaQueryReact from 'media-query-react';
 import InputLabel from '@mui/material/InputLabel'
 import { useState } from 'react';
+import {AiOutlineClose} from "react-icons/ai";
+
 
 
 
 
 export default function Beneficiario(){
     
+   const [isOpen, setIsOpen] = useState(false);
+   const [nome, setNome] = useState("");
+   const [cpf, setCpf] = useState("");
+   const [grauParentesco, setGrauParentesco] = useState("")
+   const [itemsList, setItemsList] = useState([{
+    nome: nome ,
+    cpf: cpf,
+    grauDeParentesco: grauParentesco
+
+   }]
+   );
    
-   const [number, setNumber] = useState("")
-   const [div, setDiv] = useState("")
+ 
 
+ itemsList.forEach(item => {
+    console.log(item.nome, item.cpf);
+ });
+
+ const handleInputChange = (event,itemsList) => {
+  itemsList = event.target.value
+  setItemsList(itemsList)
+ }
+ 
+ const onSubmitHandler = (e) => {
+  e.preventDefault()
+
+  console.log(itemsList)
+
+ };
+
+  /* /*  function handleAddItemToList(event) {
+    event.preventDefault(); 
     
-   const handleClick = (setNumber, setDiv) => {
-     setNumber.event.target.value
-     return (
-       setDiv * setNumber.value
-     ) 
+    setItemsList([{...itemsList}]); // <----- Copia todos os items ja existentes e entao adiociona o novo item
     
+    
+   } */
 
 
+   const screenSize = {
+    mobile: { 
+      minWidth: 320,
+      maxWidth: 480,
+    },
+    mobileLandscape: {
+      minWidth: 481,
+      maxWidth: 767,
+    },
+    tablet: {
+      minWidth: 768,
+      maxWidth: 1024,
+    },
+    desktop: {
+      minWidth: 1025,
+      maxWidth: 2500,
+    },
+  };
+   
+  
+ 
+ 
+  const Modal = ({ setIsOpen }) => {
+   
+   
+   return (
+      <>
+        <form  className={style.formulario1} onSubmit={onSubmitHandler}>
+        <div className={style.darkBG} onClick={() => setIsOpen(false)} />
+        <div className={style.centered}>
+          
+   
+          <div className={style.modal} >
+            <div className={style.modalHeader}>
+              
+            </div>
+            <button className={style.closeBtn} onClick={() => setIsOpen(false)}>
+              <AiOutlineClose style={{ marginBottom: "-3px" }} />
+            </button>
+            <div className={style.modalContent}>
+          
+            <TextField variant ="standard" style={{width:"30ch"}}
+            onChange={handleInputChange}
+            //value={nome}
+            autoFocus
+            required
+            label="Nome" 
+            id="outlined-required"
+          
+            
+          /> <br></br><br></br>
 
-    }
+           <TextField variant ="standard" style={{width:"30ch"}}
+            onChange={handleInputChange}
+           // value={cpf}
+            required
+            label="CPF" 
+            id="outlined-required"
+           
+
+
+          /> <br></br><br></br>
+
+          <TextField variant ="standard" style={{width:"30ch"}}
+            onChange={handleInputChange}
+            //value={grauParentesco}
+            required
+            label="Grau de Parentesco" 
+            id="outlined-required"
+            
+            />
+           
+            </div>
+            
+            <div className={style.modalActions}>
+              <div className={style.actionsContainer}>
+                <button className={style.deleteBtn} onClick={() => setIsOpen(true)}>
+                  SALVAR
+                </button>
+                <button
+                  className={style.cancelBtn}
+                  onClick={() => setIsOpen(false)}
+                 // onSubmit={handleAddItemToList}
+                
+                >
+                  CANCELAR
+                </button>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+      </>
+    );
+  };
+  
+
+
 
 
     return(
-  
-    <Box
+    <MediaQueryReact mediaQueries={screenSize}>
+    <div style={{background:"white", width: "100hv", marginTop:"-100px", marginLeft:"-30px", paddingBottom:"800px"}}
     
-        component="form" style={{background:"white", width:"800px", marginTop:"-85px", marginLeft:"-40px", height:"800px", marginBottom:"10px"}}
-        sx={{
-          '& .MuiTextField-root': { m: 1, width: ' 30ch' },
-        }}
-        noValidate
-        autoComplete="off"
+       
    
     >
 
       
-      <div onChange = {(e) => setDiv(e.target.value)} value ={div}  style={{ marginLeft:"-20px", marginTop:"90px", width:"300px"}}>
+      <div  style={{ marginLeft:"60px", marginTop:"120px", width:"300px"}}>
          
-          <InputLabel variant="standard" id="demo-simple-select-label" style={{marginLeft:"20px", marginRight:"5px",marginBottom:"5px"}}>
-          <i>Beneficiários:</i>
+          <InputLabel variant="standard" id="demo-simple-select-label" style={{ marginRight:"5px",marginBottom:"5px"}}>
+           Quantidade de Beneficiários:
           </InputLabel>
          
-          <TextField  variant ="standard"
+          <TextField  variant ="standard" style={{width:"30ch"}}
             required
-            value={number}
-            onChange = {(e) => setNumber(e.target.value)}
-            onClick={() => handleClick()}
+            
             id="outlined-number"
             label=""
             type="number"
@@ -62,46 +181,33 @@ export default function Beneficiario(){
           }}
            
 
-          /> 
-           <TextField variant ="standard"
-            
-            required
-           // value={Nome}
-            label="Nome" 
-            id="outlined-required"
-            
-          /> 
-           <TextField variant ="standard"
-            
-            required
-            //value={cpf}
-            label="CPF" 
-            id="outlined-required"
-            
-          /> 
-
-          <TextField variant ="standard"
-            
-            required
-            //value={Grau}
-            label="Grau de Parentesco" 
-            id="outlined-required"
-            
-          />
-      
-      
-      
-        
-      
+          /> <br></br><br></br>
+           
         
       
       
       </div>
     
+      
+     
+      <div  style={{ marginLeft:"60px", marginTop:"120px", width:"400px"}}>
+
+        
+              
+      
+
     
-      <Button style={{background: "black", marginTop:"50px", marginLeft:"5px"}} variant="contained" component="span">
+      </div>
+    
+      <Button style={{background: "black", marginTop:"50px", marginLeft:"60px"}} variant="contained" component="span" onClick={() => setIsOpen(true)} >
+             Adicionar Beneficiário
+      </Button>
+      {isOpen && <Modal setIsOpen={setIsOpen} />}
+    
+     {/*  <Button style={{background: "black", marginTop:"50px", marginLeft:"50px"}} variant="contained" component="span">
              Atualizar
-      </Button>  
+      </Button>  */}
+
         
           
 
@@ -119,7 +225,9 @@ export default function Beneficiario(){
       
         
         
-      </Box>
+      </div>
+
+      </MediaQueryReact>
     );  
 
       

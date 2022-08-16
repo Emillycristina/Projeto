@@ -1,19 +1,8 @@
 @import "../../App.css";
 
- .folder {
- cursor: pointer;
- margin-top: 20px;
- 
  
  
 
-}
- 
-.FcFolder{
-    margin-left: 600px;
-    margin-top: 100px;
-   
-} 
 
 .show{
     display: block !important;
@@ -24,15 +13,14 @@
 @media (max-width: 600px) {
 .FcFolder{
      margin-left: 90px;
-     margin-top: 100px;
-       
+    
     } 
 }
 
 @media (min-width: 600px) {
 .FcFolder{
          margin-left: 200px;
-         margin-top: 100px;
+        
            
     } 
 }
@@ -40,7 +28,7 @@
 @media (min-width: 768px) {
  .FcFolder{
  margin-left: 250px;
- margin-top: 100px;
+
                
     } 
 }
@@ -48,7 +36,7 @@
 @media (min-width: 992px) {
  .FcFolder{
  margin-left: 350px;
- margin-top: 100px;
+ 
                   
        } 
    }
@@ -58,7 +46,7 @@
 
  .FcFolder{
   margin-left: 500px;
-  margin-top: 100px;
+ 
                      
          
  } 
@@ -68,7 +56,7 @@
 
 .FcFolder{
     margin-left: 750px;
-    margin-top: 100px;
+    
                         
  } 
 }

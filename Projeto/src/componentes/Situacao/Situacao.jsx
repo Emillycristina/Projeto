@@ -3,30 +3,44 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import { NativeSelect} from "@mui/material";
+import MediaQueryReact from 'media-query-react';
 import InputLabel from '@mui/material/InputLabel';
 
+
 export default function Situacao(){
-   
+  const screenSize = {
+    mobile: { 
+      minWidth: 320,
+      maxWidth: 480,
+    },
+    mobileLandscape: {
+      minWidth: 481,
+      maxWidth: 767,
+    },
+    tablet: {
+      minWidth: 768,
+      maxWidth: 1024,
+    },
+    desktop: {
+      minWidth: 1025,
+      maxWidth: 2500,
+    },
+  };
+
     return(
-   
-     <Box
-     
-         component="form" style={{background:"white", width:"800px", marginTop:"-85px", marginLeft:"-50px", height:"800px"}}
-         sx={{
-           '& .MuiTextField-root': { m: 1, width: ' 30ch' },
-         }}
-         noValidate
-         autoComplete="off"
+    <MediaQueryReact mediaQueries={screenSize}>
+     <div style={{background:"white", width: "100hv", marginTop:"-100px", marginLeft:"-30px", paddingBottom:"800px"}}
     
-     >
        
+   
+    >
      
-     <div style={{background:"white", marginRight:"80px", marginTop:"100px" }}>
+     <div style={{background:"white", marginLeft:"60px", marginTop:"120px" }}>
        
-        <InputLabel variant="standard" id="demo-simple-select-label" style={{marginLeft:"20px", marginRight:"5px",marginBottom:"5px"}}>
-        <i>Tipo de contratação:*</i>
-        </InputLabel>
-        <NativeSelect style={{marginBottom:"10px",marginLeft:"20px",  width:"30ch", marginTop:"12px", color:"grey"}}
+        <InputLabel variant="standard" id="demo-simple-select-label" >
+          Tipo de contratação:*
+        </InputLabel><br></br>
+        <NativeSelect style={{  width:"30ch", color:"grey"}}
              required
              id="outlined-number"
              label="Tipo de contratação"
@@ -40,12 +54,12 @@ export default function Situacao(){
            <option>Eventual</option>
            <option>Patrulheiro</option>
            <option>Mobral</option>
-        </NativeSelect><br></br>
+        </NativeSelect><br></br><br></br>
          
-        <InputLabel variant="standard" id="demo-simple-select-label" style={{marginLeft:"20px", marginRight:"5px",marginBottom:"5px"}}>
-          <i>Situação:</i>
-        </InputLabel>
-        <NativeSelect style={{marginBottom:"10px",marginLeft:"20px", width:"30ch", color:"grey" }}
+        <InputLabel variant="standard" id="demo-simple-select-label" style={{}}>
+          Situação:
+        </InputLabel><br></br>
+        <NativeSelect style={{ width:"30ch", color:"grey" }}
              required
              id="outlined-number"
              label="Tipo de contratação"
@@ -57,25 +71,25 @@ export default function Situacao(){
            <option>Falecido</option>
            <option>Desligado</option>
            <option>Aponsentado</option>
-          
-         </NativeSelect>
+           
+         </NativeSelect><br></br><br></br>
          
-         <InputLabel variant="standard" id="demo-simple-select-label" style={{marginLeft:"20px", marginRight:"5px",marginBottom:"5px"}}>
-           <i>Data da Aposentadoria:</i>
-        </InputLabel>
-        <TextField style={{ marginLeft:"20px", width:"30ch", marginBottom:"20px", color:"grey"}}
-             variant ="standard"
+         <InputLabel variant="standard" id="demo-simple-select-label" style={{ }}>
+          Data da Aposentadoria:
+        </InputLabel><br></br>
+        <TextField style={{  width:"30ch", color:"grey"}}
+             variant ="standard" 
              id="outlined-telefone-input"
              
              type="date"
              
-           /><br></br>
+           /><br></br><br></br>
            
           
-           <InputLabel variant="standard" id="demo-simple-select-label" style={{marginLeft:"20px", marginRight:"5px",marginBottom:"5px"}}>
-           <i>Aponsentadoria por:</i>
-           </InputLabel>
-           <NativeSelect style={{marginBottom:"10px",marginLeft:"20px", width:"30ch", color:"grey"}}
+           <InputLabel variant="standard" id="demo-simple-select-label" style={{ }}>
+           Aponsentadoria por:
+           </InputLabel><br></br>
+           <NativeSelect style={{ width:"30ch", color:"grey"}}
              id="outlined-number"
              label="Tipo de contratação"
              type="select"
@@ -89,51 +103,45 @@ export default function Situacao(){
            
           
          </NativeSelect>
-         <br></br>
-         <Button style={{background: "black", marginTop:"50px", marginLeft:"5px"}} variant="contained" component="span">
-             Atualizar
-         </Button> 
-        
-           
-         </div>
+         <br></br><br></br>
          
-         <div style={{ marginLeft:"300px", marginTop:"-401px", width:"300px"}}>
         
-       
-          
-          <InputLabel variant="standard" id="demo-simple-select-label" style={{marginLeft:"20px", marginRight:"5px",marginBottom:"5px"}}>
-           <i>Motivo do desligamento:</i>
-          </InputLabel>
-           <TextField variant ="standard"
+          <InputLabel variant="standard" id="demo-simple-select-label" style={{ marginRight:"5px"}}>
+          Motivo do desligamento:
+          </InputLabel><br></br>
+           <TextField variant ="standard" style={{width:"30ch"}}
              required
              id="outlined-required"
              label=""
              
-           /> <br></br>
+           /> <br></br><br></br>
  
-           <InputLabel variant="standard" id="demo-simple-select-label" style={{marginLeft:"20px", marginRight:"5px",marginBottom:"5px"}}>
-           <i>Data do desligamento:</i>
-           </InputLabel>
-           <TextField variant ="standard"
+           <InputLabel variant="standard" id="demo-simple-select-label" style={{ marginRight:"5px"}}>
+           Data do desligamento:
+           </InputLabel><br></br>
+           <TextField variant ="standard" style={{width:"30ch"}}
              id="outlined-telefone-input"
              label=""
              type="date"
              
-           />
+           /> <br></br>
             
 
-             
+           <Button style={{background: "black", marginTop:"50px", marginLeft:"5px"}} variant="contained" component="span">
+           Atualizar
+          </Button> 
          
-           </div>
            
-         
+            </div>
           
- 
-         
+          
         
          
         
-       </Box>
+           </div>
+
+
+      </MediaQueryReact>
      );  
  
        

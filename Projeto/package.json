@@ -12,6 +12,7 @@
     "@emotion/styled": "^11.9.3",
     "@mui/material": "^5.8.6",
     "@mui/styled-engine-sc": "^5.8.0",
+    "media-query-react": "^1.0.4",
     "react": "^18.0.0",
     "react-data-grid": "^7.0.0-beta.13",
     "react-dom": "^18.0.0",

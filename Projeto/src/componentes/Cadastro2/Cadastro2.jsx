@@ -2,95 +2,115 @@ import React from "react";
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
-import { NativeSelect} from "@mui/material";
+import MediaQueryReact from 'media-query-react';
 import InputLabel from '@mui/material/InputLabel'
-import { IMaskInput } from "react-imask";
+import InputMask from "react-input-mask"
 
 
 
 
 
 export default function Cadastro2(){
-   
+     
+  const screenSize = {
+    mobile: { 
+      minWidth: 320,
+      maxWidth: 480,
+    },
+    mobileLandscape: {
+      minWidth: 481,
+      maxWidth: 767,
+    },
+    tablet: {
+      minWidth: 768,
+      maxWidth: 1024,
+    },
+    desktop: {
+      minWidth: 1025,
+      maxWidth: 2500,
+    },
+  };
+
+
+
+
    return(
-  
-    <Box
+
+    <MediaQueryReact mediaQueries={screenSize}>
+   <div style={{background:"white", width: "100hv", marginTop:"-100px", marginLeft:"-30px", paddingBottom:"800px"}}
     
-        component="form" style={{background:"white", width:"800px", marginTop:"-85px", marginLeft:"-50px", height:"800px", marginBottom:"10px"}}
-        sx={{
-          '& .MuiTextField-root': { m: 1, width: ' 30ch' },
-        }}
-        noValidate
-        autoComplete="off"
+       
    
     >
       
-    
-    
-    <div style={{background:"white", marginRight:"80px", marginTop:"100px" }}>
-        <TextField variant ="standard"
+   <div style={{background:"white", marginRight:"80px", marginTop:"100px", marginLeft:"60px"}}>
+        <TextField variant ="standard" style={{width:"30ch"}}
             
             required
             label="Nome" 
             id="outlined-required"
             
-          />
-          <TextField variant ="standard"
+          /> <br></br><br></br>
+          <TextField variant ="standard" style={{width:"30ch"}}
             
             required
             id="outlined-required"
             label="CPF"
-          />
+          /><br></br><br></br>
           
-          <TextField variant ="standard" 
+          <TextField variant ="standard" style={{width:"30ch"}}
             id="outlined-telefone-input"
             label="Telefone"
             type="tel"
+            placeholder="(xx) xxxxx-xxxx"
             
-          />
-          <TextField variant ="standard"
+          /><br></br><br></br>
+          <TextField variant ="standard" style={{width:"30ch"}}
             required
             id="outlined-endereco-input"
             label="Endereço"
             type=""
             
-          />
-          <TextField variant ="standard"
+          /><br></br><br></br>
+          <TextField variant ="standard" style={{width:"30ch"}}
             required
             id="outlined-cpf-input"
             label="CEP"
             type="CEP"
+            placeholder="xxxxx-xxx"
             
-          />
+          /><br></br><br></br>
 
-          <TextField variant ="standard"
+          <TextField variant ="standard" style={{width:"30ch"}}
             id="outlined-number"
             label="Number"
             type="number"
             InputLabelProps={{
               shrink: true,
             }}
-          /> 
+          /> <br></br><br></br>
           
-          <InputLabel variant="standard" id="demo-simple-select-label" style={{marginLeft:"-1px", marginRight:"-10px",marginBottom:"5px", marginTop:"7px"}}>
-          <i>Data de Nasc.:</i>
-          </InputLabel>
-          <TextField variant ="standard"
+          <InputLabel variant="standard" id="demo-simple-select-label" style={{width:"30ch" }}>
+          Data de Nasc.:
+          </InputLabel><br></br>
+          <TextField variant ="standard" style={{width:"30ch"}}
             required
             id="outlined-helperText"
             label=""
             type= "date"
              /> 
          <br></br>
-       
+         
 
          <Button style={{background: "black", marginTop:"50px", marginLeft:"5px"}} variant="contained" component="span">
              Atualizar
          </Button>  
+         
+         
         
         </div>
         
-       
+     
       
          
          
@@ -103,7 +123,9 @@ export default function Cadastro2(){
        
         
        
-      </Box>
+        </div>
+
+      </MediaQueryReact>
     );  
 
        

@@ -3,16 +3,39 @@ import style from "./Folder.modules.css";
 import Modal from "../Modal/Modal";
 import {FcFolder} from "react-icons/fc";
 import {useState} from "react";
+import MediaQueryReact from 'media-query-react';
 
 
 export default function Situacao(){
 
     const[isOpen , setIsOpen]= useState(false);
+    
+    const screenSize = {
+      mobile: { 
+        minWidth: 320,
+        maxWidth: 480,
+      },
+      mobileLandscape: {
+        minWidth: 481,
+        maxWidth: 767,
+      },
+      tablet: {
+        minWidth: 768,
+        maxWidth: 1024,
+      },
+      desktop: {
+        minWidth: 1025,
+        maxWidth: 2500,
+      },
+    };
 
     return (
-        
-      <div  style={{ marginLeft:"-50px", marginTop:"-86px", width:"800px", background:"white", height:"800px", borderRadius:"7px", paddingTop:"90px" , paddingLeft:"40px"}}>
+      <MediaQueryReact mediaQueries={screenSize}>
+       <div style={{background:"white", width: "100hv", marginTop:"90px", marginLeft:"60px", paddingBottom:"800px", borderRadius:"10px"}}
+    
        
+   
+      >
         <FcFolder size="80" style={{cursor:"pointer"}} onClick={() => setIsOpen(true)}/>
         <FcFolder size="80" style={{cursor:"pointer"}} onClick={() => setIsOpen(true)}/>
         <FcFolder size="80" style={{cursor:"pointer"}} onClick={() => setIsOpen(true)}/>
@@ -21,7 +44,7 @@ export default function Situacao(){
         
         </div>
      
-        
+      </MediaQueryReact>
       
 
     );
